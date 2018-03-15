@@ -124,6 +124,65 @@ public class Libro {
 	public String toString() {
 		return "Libro [titulo=" + titulo + ", ISBN=" + ISBN + ", FechaEdicion=" + FechaEdicion + ", idioma=" + idioma
 				+ ", categoria=" + categoria + ", autor=" + autor + ", foto=" + foto + "]";
+	}
+
+	
+	//////hashCode y equals///////
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((FechaEdicion == null) ? 0 : FechaEdicion.hashCode());
+		result = prime * result + ISBN;
+		result = prime * result + ((autor == null) ? 0 : autor.hashCode());
+		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
+		result = prime * result + ((foto == null) ? 0 : foto.hashCode());
+		result = prime * result + ((idioma == null) ? 0 : idioma.hashCode());
+		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Libro other = (Libro) obj;
+		if (FechaEdicion == null) {
+			if (other.FechaEdicion != null)
+				return false;
+		} else if (!FechaEdicion.equals(other.FechaEdicion))
+			return false;
+		if (ISBN != other.ISBN)
+			return false;
+		if (autor == null) {
+			if (other.autor != null)
+				return false;
+		} else if (!autor.equals(other.autor))
+			return false;
+		if (categoria != other.categoria)
+			return false;
+		if (foto == null) {
+			if (other.foto != null)
+				return false;
+		} else if (!foto.equals(other.foto))
+			return false;
+		if (idioma == null) {
+			if (other.idioma != null)
+				return false;
+		} else if (!idioma.equals(other.idioma))
+			return false;
+		if (titulo == null) {
+			if (other.titulo != null)
+				return false;
+		} else if (!titulo.equals(other.titulo))
+			return false;
+		return true;
 	}	
+	
+	
 	
 }
