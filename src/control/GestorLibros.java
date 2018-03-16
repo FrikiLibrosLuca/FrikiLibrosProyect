@@ -14,16 +14,14 @@ public class GestorLibros {
 	static ConecJDBC bbdd= new ConecJDBC();
 	
 	
-	public static void buscarLibro(HttpServletRequest request){
+	public static HttpServletRequest buscarLibro(HttpServletRequest request){
 		//modificar para poder ejecutar la select cuando Vicky la termine
 		String info;
 		
 		info=request.getParameter("isbn");
 		
-		pintarLibro(bbdd.leerElemento("libros","isbn",info), request);
 		
-	
-		
+		return pintarLibro(bbdd.leerElemento("libros","isbn",info), request);
 	}
 	
 	
@@ -40,15 +38,15 @@ public class GestorLibros {
 				lib.setFechaEdicion("fecha_edicion");
 				lib.setIdioma("idioma");
 				lib.setCategoria("categoria");
-				au.setNombreAutor("nombreAutor");
-				au.setApellidoAutor("apellidoAutor");
+				au.setNombreAutor("nombre");
+				au.setApellidoAutor("apellido");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		//se añade libro a request
+		lib.setAutor(au);
 		
-		request.setAttribute("libro", lib);
+		request.setAttribute("Libro", lib);
 		
 		return request;
 		

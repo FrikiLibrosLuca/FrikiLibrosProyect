@@ -70,7 +70,8 @@ public class ConecJDBC {
 	public ResultSet leerElemento(String nameTable, String columna, String filtro){
 		//String query = "SELECT * FROM " + nameTable + " WHERE " + columna + "=" + "filtro";
 		
-		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre nombreAutor, a.apellido apellidoAutor FROM libros as l, autor as a WHERE l." + columna + "=" + filtro + "and a.id=l.id_autor;";
+		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
+				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + filtro + "' and a.id=l.id_autor;";
 		
 		try {
 			this.st = con.createStatement();

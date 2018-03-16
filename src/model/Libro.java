@@ -1,13 +1,14 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Libro {
 	private String titulo;
 	private String ISBN;
 	private LocalDate fechaEdicion;
 	private String idioma;
-	private Categoria categoria;
+	private String categoria;
 	private String saga = null;
 	private Autor autor;
 	private String foto;
@@ -18,7 +19,7 @@ public class Libro {
 		super();
 	}
 	
-	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, Categoria categoria, String saga,
+	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String categoria, String saga,
 			Autor autor, String foto) {
 		super();
 		this.titulo = titulo;
@@ -32,7 +33,7 @@ public class Libro {
 	}
 
 	//sin saga
-	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, Categoria categoria, Autor autor,
+	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String categoria, Autor autor,
 			String foto) {
 		super();
 		this.titulo = titulo;
@@ -56,7 +57,7 @@ public class Libro {
 	}
 
 	//sin autor 
-	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, Categoria categoria, String foto) {
+	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String categoria, String foto) {
 		super();
 		this.titulo = titulo;
 		this.ISBN = ISBN;
@@ -108,10 +109,10 @@ public class Libro {
 	}
 
 	public void setFechaEdicion(String fechaEdicion) {
-		LocalDate fecha = null;
-		fecha=LocalDate.parse(fechaEdicion);
-				
-		this.fechaEdicion = fecha;
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
+		LocalDate date = LocalDate.parse(fechaEdicion, formatter);		
+		this.fechaEdicion = date;
 	}
 
 	public String getIdioma() {
@@ -122,12 +123,13 @@ public class Libro {
 		this.idioma = idioma;
 	}
 
-	public Categoria getCategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
 
 	public void setCategoria(String categoria) {
-		this.categoria = Categoria.valueOf(categoria);
+		
+		this.categoria = categoria;
 	}
 
 	public Autor getAutor() {

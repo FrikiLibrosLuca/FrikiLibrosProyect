@@ -22,7 +22,7 @@
         <div id="InfoLibro">
            <p id="ISBN">ISBN: <spam id="ISBNDatos">${Libro.ISBN}</spam></p>
            <p id="titulo">Titulo: <spam id="tituloDatos">${Libro.titulo}</spam></p>
-           <p id="autor">Autor: <spam id="autorDatos"></spam>${Libro.autor}</p>
+           <p id="autor">Autor: <spam id="autorDatos"></spam>${Libro.autor.nombreAutor} ${Libro.autor.apellidoAutor}</p>
            <p id="saga">Saga: <spam id="saga"></spam>${Libro.saga}</p>
            <p id="fechaEdicion">Fecha de Edición: <spam id="fechaEdicionDatos">${Libro.fechaEdicion}</spam></p>
            <p id="idioma">Idioma: <spam id="idiomaDatos">${Libro.idioma}</spam></p>

@@ -45,7 +45,8 @@ public class Servlet extends HttpServlet {
 	            throws ServletException, IOException {
 	        RequestDispatcher view;
 	        //Vas a plantillaLibro
-	       view = request.getRequestDispatcher("plantillaLibro.jsp");
+	        
+	        view = GestorLibros.buscarLibro(request).getRequestDispatcher("plantillaLibro.jsp");
 	       
 	        view.forward(request, response);
 	    }
