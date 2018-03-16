@@ -12,6 +12,7 @@ public class Libro {
 	private Autor autor;
 	private String foto;
 	
+	
 	//////CONSTRUCTOR//////////
 	public Libro() {
 		super();
