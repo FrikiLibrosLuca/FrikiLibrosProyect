@@ -7,4 +7,5 @@ public enum Categoria {
 	Historica,
 	Policiaca,
 	Terror
+	
 }
