@@ -74,6 +74,7 @@ public class ConecJDBC {
 			System.out.println("Codigo del Error: " + e.getErrorCode());
 		}
 		return rs;
+		
 	}
 	
 	/*Estos métodos se realizarán en un futuro*/
