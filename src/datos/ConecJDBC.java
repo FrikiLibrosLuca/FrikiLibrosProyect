@@ -63,7 +63,10 @@ public class ConecJDBC {
 	}
 	
 	public ResultSet leerElemento(String nameTable, String columna, String filtro){
-		String query = "SELECT * FROM " + nameTable + " WHERE " + columna + "=" + "filtro";
+		//String query = "SELECT * FROM " + nameTable + " WHERE " + columna + "=" + "filtro";
+		
+		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre nombreAutor, a.apellido apellidoAutor FROM libros as l, autor as a WHERE l." + columna + "=" + filtro + "and a.id=l.id_autor;";
+		
 		try {
 			this.st = con.createStatement();
 			this.rs = st.executeQuery(query);
@@ -74,7 +77,7 @@ public class ConecJDBC {
 			System.out.println("Codigo del Error: " + e.getErrorCode());
 		}
 		return rs;
-		
+	
 	}
 	
 	/*Estos métodos se realizarán en un futuro*/
