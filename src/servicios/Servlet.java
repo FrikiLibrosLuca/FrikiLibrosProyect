@@ -61,7 +61,7 @@ public class Servlet extends HttpServlet {
         
         view= request.getRequestDispatcher("nombreDelaPagina");
         
-        view.forward(reques,response);
+        view.forward(request,response);
         
         }
     }*/

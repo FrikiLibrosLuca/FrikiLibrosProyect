@@ -9,9 +9,10 @@
 </head>
 <body>
 	<!-- action="InputServlet" -->
-    <form action="plantillaLibro.jsp" method="get">
+    <form action="Servlet" method="get">
         <input type="submit" value="boton">
         <input type="hidden" name="opcion" value="boton">
+        <input type="hidden" name="isbn" value="0-312-85705-5">
     </form>
 </body>
 </html>

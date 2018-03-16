@@ -12,6 +12,10 @@ public class ConecJDBC {
 	private Statement st = null;
 	private ResultSet rs = null;
 	
+	public ConecJDBC(){
+		abrirConnect();
+	}
+	
 	public static void abrirConnect() {
 		try {
 			String driverClassName = "com.mysql.jdbc.Driver";
