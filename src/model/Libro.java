@@ -8,6 +8,7 @@ public class Libro {
 	private LocalDate fechaEdicion;
 	private String idioma;
 	private Categoria categoria;
+	private String saga = null;
 	private Autor autor;
 	private String foto;
 	
@@ -15,7 +16,21 @@ public class Libro {
 	public Libro() {
 		super();
 	}
+	
+	public Libro(String titulo, int iSBN, LocalDate fechaEdicion, String idioma, Categoria categoria, String saga,
+			Autor autor, String foto) {
+		super();
+		this.titulo = titulo;
+		ISBN = iSBN;
+		this.fechaEdicion = fechaEdicion;
+		this.idioma = idioma;
+		this.categoria = categoria;
+		this.saga = saga;
+		this.autor = autor;
+		this.foto = foto;
+	}
 
+	//sin saga
 	public Libro(String titulo, int iSBN, LocalDate fechaEdicion, String idioma, Categoria categoria, Autor autor,
 			String foto) {
 		super();
@@ -28,6 +43,7 @@ public class Libro {
 		this.foto = foto;
 	}
 
+	
 	//sin autor y sin categoria
 	public Libro(String titulo, int iSBN, LocalDate fechaEdicion, String idioma, String foto) {
 		super();
