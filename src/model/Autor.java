@@ -5,7 +5,7 @@ public class Autor {
 	
 	String apellidoAutor, nombreAutor;
 	
-	
+	//CONSTRUCTOR
 	public Autor(){
 		
 	}
