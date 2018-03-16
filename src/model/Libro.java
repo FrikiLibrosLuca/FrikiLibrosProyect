@@ -5,9 +5,10 @@ import java.time.LocalDate;
 public class Libro {
 	private String titulo;
 	private int ISBN;
-	private LocalDate FechaEdicion;
+	private LocalDate fechaEdicion;
 	private String idioma;
 	private Categoria categoria;
+	private String saga = null;
 	private Autor autor;
 	private String foto;
 	
@@ -15,25 +16,40 @@ public class Libro {
 	public Libro() {
 		super();
 	}
+	
+	public Libro(String titulo, int iSBN, LocalDate fechaEdicion, String idioma, Categoria categoria, String saga,
+			Autor autor, String foto) {
+		super();
+		this.titulo = titulo;
+		ISBN = iSBN;
+		this.fechaEdicion = fechaEdicion;
+		this.idioma = idioma;
+		this.categoria = categoria;
+		this.saga = saga;
+		this.autor = autor;
+		this.foto = foto;
+	}
 
+	//sin saga
 	public Libro(String titulo, int iSBN, LocalDate fechaEdicion, String idioma, Categoria categoria, Autor autor,
 			String foto) {
 		super();
 		this.titulo = titulo;
 		ISBN = iSBN;
-		FechaEdicion = fechaEdicion;
+		fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.categoria = categoria;
 		this.autor = autor;
 		this.foto = foto;
 	}
 
+	
 	//sin autor y sin categoria
 	public Libro(String titulo, int iSBN, LocalDate fechaEdicion, String idioma, String foto) {
 		super();
 		this.titulo = titulo;
 		ISBN = iSBN;
-		FechaEdicion = fechaEdicion;
+		fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.foto = foto;
 	}
@@ -43,7 +59,7 @@ public class Libro {
 		super();
 		this.titulo = titulo;
 		ISBN = iSBN;
-		FechaEdicion = fechaEdicion;
+		fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.categoria = categoria;
 		this.foto = foto;
@@ -54,7 +70,7 @@ public class Libro {
 		super();
 		this.titulo = titulo;
 		ISBN = iSBN;
-		FechaEdicion = fechaEdicion;
+		fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.autor = autor;
 		this.foto = foto;
@@ -79,11 +95,11 @@ public class Libro {
 	}
 
 	public LocalDate getFechaEdicion() {
-		return FechaEdicion;
+		return fechaEdicion;
 	}
 
 	public void setFechaEdicion(LocalDate fechaEdicion) {
-		FechaEdicion = fechaEdicion;
+		fechaEdicion = fechaEdicion;
 	}
 
 	public String getIdioma() {
@@ -122,7 +138,7 @@ public class Libro {
 	/////generar toString////////
 	@Override
 	public String toString() {
-		return "Libro [titulo=" + titulo + ", ISBN=" + ISBN + ", FechaEdicion=" + FechaEdicion + ", idioma=" + idioma
+		return "Libro [titulo=" + titulo + ", ISBN=" + ISBN + ", FechaEdicion=" + fechaEdicion + ", idioma=" + idioma
 				+ ", categoria=" + categoria + ", autor=" + autor + ", foto=" + foto + "]";
 	}
 
@@ -132,7 +148,7 @@ public class Libro {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((FechaEdicion == null) ? 0 : FechaEdicion.hashCode());
+		result = prime * result + ((fechaEdicion == null) ? 0 : fechaEdicion.hashCode());
 		result = prime * result + ISBN;
 		result = prime * result + ((autor == null) ? 0 : autor.hashCode());
 		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
@@ -151,10 +167,10 @@ public class Libro {
 		if (getClass() != obj.getClass())
 			return false;
 		Libro other = (Libro) obj;
-		if (FechaEdicion == null) {
-			if (other.FechaEdicion != null)
+		if (fechaEdicion == null) {
+			if (other.fechaEdicion != null)
 				return false;
-		} else if (!FechaEdicion.equals(other.FechaEdicion))
+		} else if (!fechaEdicion.equals(other.fechaEdicion))
 			return false;
 		if (ISBN != other.ISBN)
 			return false;
