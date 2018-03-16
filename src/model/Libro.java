@@ -107,8 +107,11 @@ public class Libro {
 		return fechaEdicion;
 	}
 
-	public void setFechaEdicion(LocalDate fechaEdicion) {
-		this.fechaEdicion = fechaEdicion;
+	public void setFechaEdicion(String fechaEdicion) {
+		LocalDate fecha = null;
+		fecha=LocalDate.parse(fechaEdicion);
+				
+		this.fechaEdicion = fecha;
 	}
 
 	public String getIdioma() {
@@ -123,8 +126,8 @@ public class Libro {
 		return categoria;
 	}
 
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setCategoria(String categoria) {
+		this.categoria = Categoria.valueOf(categoria);
 	}
 
 	public Autor getAutor() {
