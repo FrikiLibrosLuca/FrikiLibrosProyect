@@ -1,4 +1,4 @@
-package servicios;
+package control;
 
 import java.io.IOException;
 
@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class InputServlet
  */
-@WebServlet(urlPatterns = {"/InputServlet"})
-public class InputServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/Servlet"})
+public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -26,12 +26,9 @@ public class InputServlet extends HttpServlet {
         String origen = request.getParameter("opcion");
         //Esto  es la opcion de la pagina de "pruebaboton" , 
         /*entre los if orige.contentEquals("ValordelaOpcionHiddendlhtml"){metodoProcess}*/
-        if (origen.contentEquals("p1")) {
-        	processBoton(request,response);
-        } else if (origen.contentEquals("p2")) {
-            //Vienes de la pagina 2 y vas a la 3
+        if (origen.contentEquals("boton")) {
         	processLibro(request,response);
-        }
+        } 
     }
             
     
@@ -61,7 +58,7 @@ public class InputServlet extends HttpServlet {
         
         view= request.getRequestDispatcher("nombreDelaPagina");
         
-        view.forward(reques,response);
+        view.forward(request,response);
         
         }
     }*/
@@ -75,7 +72,7 @@ public class InputServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		processRequestHandler(request,response);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 	
 
