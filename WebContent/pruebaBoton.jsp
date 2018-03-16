@@ -12,7 +12,6 @@
     <form action="plantillaLibro.jsp" method="get">
         <input type="submit" value="boton">
         <input type="hidden" name="opcion" value="boton">
-        
     </form>
 </body>
 </html>
