@@ -33,13 +33,13 @@ public class GestorLibros {
 		try {
 			while(rs.next()){
 				lib.setISBN(rs.getString("isbn"));
-				lib.setTitulo("titulo");
-				lib.setSaga("saga");
-				lib.setFechaEdicion("fecha_edicion");
-				lib.setIdioma("idioma");
-				lib.setCategoria("categoria");
-				au.setNombreAutor("nombre");
-				au.setApellidoAutor("apellido");
+				lib.setTitulo(rs.getString("titulo"));
+				lib.setSaga(rs.getString("saga"));
+				lib.setFechaEdicion(rs.getString("fecha_edicion"));
+				lib.setIdioma(rs.getString("idioma"));
+				lib.setCategoria(rs.getString("categoria"));
+				au.setNombreAutor(rs.getString("nombre"));
+				au.setApellidoAutor(rs.getString("apellido"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

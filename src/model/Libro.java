@@ -110,7 +110,7 @@ public class Libro {
 
 	public void setFechaEdicion(String fechaEdicion) {
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate date = LocalDate.parse(fechaEdicion, formatter);		
 		this.fechaEdicion = date;
 	}
