@@ -24,9 +24,9 @@
            <p id="titulo">Titulo: <spam id="tituloDatos">${Libro.titulo}</spam></p>
            <p id="autor">Autor: <spam id="autorDatos"></spam>${Libro.autor.nombreAutor} ${Libro.autor.apellidoAutor}</p>
            <p id="saga">Saga: <spam id="saga"></spam>${Libro.saga}</p>
-           <p id="fechaEdicion">Fecha de EdiciÃ³n: <spam id="fechaEdicionDatos">${Libro.fechaEdicion}</spam></p>
+           <p id="fechaEdicion">Fecha de Edición: <spam id="fechaEdicionDatos">${Libro.fechaEdicion}</spam></p>
            <p id="idioma">Idioma: <spam id="idiomaDatos">${Libro.idioma}</spam></p>
-           <p id="categoria">CategorÃ­a: <spam id="categoriaDatos">${Libro.categoria}</spam></p>                       
+           <p id="categoria">Categoría: <spam id="categoriaDatos">${Libro.categoria}</spam></p>                       
         </div>
     </div>
 </body>
