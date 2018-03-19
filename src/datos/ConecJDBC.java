@@ -176,4 +176,19 @@ public class ConecJDBC {
 		return rs;
 	}	
 	
+	public ResultSet leerListaLibro(){
+		String query = "SELECT * FROM libros;";
+		
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+			
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return rs;
+	}	
+	
 }
