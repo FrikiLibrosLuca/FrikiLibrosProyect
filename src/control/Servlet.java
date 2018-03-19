@@ -46,7 +46,7 @@ public class Servlet extends HttpServlet {
 	        RequestDispatcher view;
 	        //Vas a plantillaLibro
 	        
-	        view = GestorLibros.buscarLibro(request).getRequestDispatcher("plantillaLibro.jsp");
+	        view = GestorLibros.mostrarDetallesLibro(request).getRequestDispatcher("plantillaLibro.jsp");
 	       
 	        view.forward(request, response);
 	    }
