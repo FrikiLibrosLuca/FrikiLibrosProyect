@@ -104,6 +104,7 @@ public class ConectorLibros {
 			return registrosAfectados;		
 	}
 	
+	
 	public int modificarLibro(Libro lib, int idAutor){
 		String query = "UPDATE libros SET titulo='" + lib.getTitulo() + "', saga='" + lib.getSaga() + "', fecha_edicion= STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d), idioma='" + lib.getIdioma() + "', categoria='" + lib.getCategoria() + "', id_autor='" + idAutor + "' WHERE isbn='" + lib.getISBN() + "';";
 		int registrosAfectados = -1; 

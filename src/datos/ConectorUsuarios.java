@@ -17,6 +17,7 @@ public class ConectorUsuarios {
 	public ConectorUsuarios(){
 		abrirConnect();
 	}
+
 	
 	public static void abrirConnect() {
 		try {
