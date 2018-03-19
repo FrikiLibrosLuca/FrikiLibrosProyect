@@ -132,6 +132,20 @@ public class ConecJDBC {
 		return registrosAfectados;
 	}
 	
+	public ResultSet leerLibro(String isbn){
+		String query = "SELECT * FROM libros WHERE isbn='" + isbn + "';";
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+			
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return rs;
+	}
+	
 	public ResultSet leerListaLibro(String columna, String valor){
 		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
 		
