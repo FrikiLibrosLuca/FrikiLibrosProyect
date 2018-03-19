@@ -23,9 +23,9 @@ public class ConectorLibros {
 		try {
 			String driverClassName = "com.mysql.jdbc.Driver";
 			//String driverUrl = "jdbc:mysql://192.168.200.9:8080/frikilibros";
-			String driverUrl = "jdbc:mysql://localhost/frikilibros";
-			String user = "root";
-			String password = "1111";
+			String driverUrl = "jdbc:mysql://192.168.200.9/frikilibros";
+			String user = "proyecto";
+			String password = "1234";
 			Class.forName(driverClassName);
 			con = DriverManager.getConnection(driverUrl, user, password);
 			
