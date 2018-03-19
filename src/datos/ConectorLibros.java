@@ -92,7 +92,7 @@ public class ConectorLibros {
 	public int insertLibro(Libro lib, int idAutor){
 		String query = "INSERT INTO libro VALUES ('" + lib.getISBN() + "', '" + lib.getTitulo() + "', '" + lib.getSaga() + "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '" + lib.getCategoria() + "', '" + idAutor + "';";
 		
-		int registrosAfectados = 100; 
+		int registrosAfectados = -1; 
 			try {
 				this.st = con.createStatement();
 				registrosAfectados = st.executeUpdate(query);
@@ -106,7 +106,7 @@ public class ConectorLibros {
 	
 	public int modificarLibro(Libro lib, int idAutor){
 		String query = "UPDATE libros SET titulo='" + lib.getTitulo() + "', saga='" + lib.getSaga() + "', fecha_edicion= STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d), idioma='" + lib.getIdioma() + "', categoria='" + lib.getCategoria() + "', id_autor='" + idAutor + "' WHERE isbn='" + lib.getISBN() + "';";
-		int registrosAfectados = 100; 
+		int registrosAfectados = -1; 
 		try {
 			this.st = con.createStatement();
 			registrosAfectados = st.executeUpdate(query);
@@ -120,7 +120,7 @@ public class ConectorLibros {
 	
 	public int borrarLibro(String isbn){
 		String query = "DELETE FROM libros WHERE isbn='" + isbn + "'";
-		int registrosAfectados = 100; 
+		int registrosAfectados = -1; 
 		try {
 			this.st = con.createStatement();
 			registrosAfectados = st.executeUpdate(query);

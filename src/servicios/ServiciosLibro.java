@@ -12,7 +12,7 @@ import datos.ConectorLibros;
 import model.Autor;
 import model.Libro;
 
-public class Servicios {
+public class ServiciosLibro {
 	
 	ConectorLibros bbdd= new ConectorLibros();
 	
@@ -132,7 +132,7 @@ public class Servicios {
 	/**
 	 * Metodo que inserta o actualiza un libro de la bbdd, dependiendo de la entrada
 	 * @param request
-	 * @return int, resultado de la operación 0=ok | -1=error
+	 * @return int, resultado de la operación 0>=ok | -1=error
 	 */
 	public int insertarModificar(HttpServletRequest request){
 	
@@ -163,7 +163,7 @@ public class Servicios {
 	/**
 	 * metodo que recibe un isbn y borra el registro correspondiente de la tabla libro
 	 * @param isbn
-	 * @return int, resultado de la operación 0=ok | -1=error
+	 * @return int, resultado de la operación 0>=ok | -1=error
 	 */
 	public int borrarLibro(String isbn){
 		int resultado;

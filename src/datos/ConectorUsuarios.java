@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import model.Libro;
+import model.Usuario;
 
 public class ConectorUsuarios {
 
@@ -55,8 +55,8 @@ public class ConectorUsuarios {
 		}		
 	}
 	
-	public ResultSet leerElemento(String nameTable){
-		String query = "SELECT * FROM " + nameTable;
+	public ResultSet leerUsuario(String correo){
+		String query = "SELECT * FROM usuarios WHERE correo='" + correo + "'";
 		try {
 			this.st = con.createStatement();
 			this.rs = st.executeQuery(query);
@@ -69,29 +69,14 @@ public class ConectorUsuarios {
 		return rs;
 	}
 	
-	public ResultSet leerElemento(String nameTable, String columna, String filtro){
-		//String query = "SELECT * FROM " + nameTable + " WHERE " + columna + "=" + "filtro";
-		
-		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
-				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + filtro + "' and a.id=l.id_autor;";
-		
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
+	public int insertarUsuario(Usuario user, boolean admin){
+		int privilegios = 0;
+		if (admin)
+			privilegios = 1;
 			
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-	
-	}	
-	
-	public int insertLibro(Libro lib, int idAutor){
-		String query = "INSERT INTO libro VALUES ('" + lib.getISBN() + "', '" + lib.getTitulo() + "', '" + lib.getSaga() + "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '" + lib.getCategoria() + "', '" + idAutor + "';";
+		String query = "INSERT INTO usuarios VALUES ('" + user.getUsuario() + "', '" + user.getCorreo() + "', '" + user.getContrasena() +","+privilegios+ ";";
 		
-		int registrosAfectados = 100; 
+		int registrosAfectados = -1; 
 			try {
 				this.st = con.createStatement();
 				registrosAfectados = st.executeUpdate(query);
@@ -102,24 +87,10 @@ public class ConectorUsuarios {
 			}
 			return registrosAfectados;		
 	}
-	
-	public int modificarLibro(Libro lib, int idAutor){
-		String query = "UPDATE libros SET titulo='" + lib.getTitulo() + "', saga='" + lib.getSaga() + "', fecha_edicion= STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d), idioma='" + lib.getIdioma() + "', categoria='" + lib.getCategoria() + "', id_autor='" + idAutor + "' WHERE isbn='" + lib.getISBN() + "';";
-		int registrosAfectados = 100; 
-		try {
-			this.st = con.createStatement();
-			registrosAfectados = st.executeUpdate(query);
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return registrosAfectados;	
-	}
-	
-	public int borrarLibro(String isbn){
-		String query = "DELETE FROM libros WHERE isbn='" + isbn + "'";
-		int registrosAfectados = 100; 
+
+	public int borrarUsuario(String correo){
+		String query = "DELETE FROM usuarios WHERE correo='" + correo + "'";
+		int registrosAfectados = -1; 
 		try {
 			this.st = con.createStatement();
 			registrosAfectados = st.executeUpdate(query);
@@ -131,64 +102,20 @@ public class ConectorUsuarios {
 		return registrosAfectados;
 	}
 	
-	public ResultSet leerLibro(String isbn){
-		String query = "SELECT * FROM libros WHERE isbn='" + isbn + "';";
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
+	public int modificarUsuario(Usuario user){
 			
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
+		String query = "UPDATE usuarios SET correo='" + user.getCorreo() + "', contrasena='" + user.getContrasena() + ";";
+		
+		int registrosAfectados = -1; 
+			try {
+				this.st = con.createStatement();
+				registrosAfectados = st.executeUpdate(query);
+			} catch (SQLException e) {
+				System.out.println("Exception SQL: " + e.getMessage());
+				System.out.println("Estado SQL: " + e.getSQLState());
+				System.out.println("Codigo del Error: " + e.getErrorCode());
+			}
+			return registrosAfectados;		
 	}
-	
-	
-	public ResultSet leerListaLibro(String columna, String valor){
-		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
-		
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-			
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-	}
-	
-	public ResultSet leerListaLibro(String columna, int valor){
-		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
-		
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-			
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-	}	
-	
-	public ResultSet leerListaLibro(){
-		String query = "SELECT * FROM libros;";
-		
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-			
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-	}	
 	
 }
