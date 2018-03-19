@@ -146,6 +146,7 @@ public class ConecJDBC {
 		return rs;
 	}
 	
+	
 	public ResultSet leerListaLibro(String columna, String valor){
 		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
 		
