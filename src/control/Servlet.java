@@ -23,24 +23,20 @@ public class Servlet extends HttpServlet {
 	
 	protected void processRequestHandler(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-		HttpSession session = request.getSession(); 
+		RequestDispatcher view;
+		 
+		//HttpSession session = request.getSession(); 
 		
 		gestor.gestion(request,response);
        
+		view =request.getRequestDispatcher(request.getParameter("plantilla"));
+	       
+        view.forward(request, response);
+		
     }
             
 	 
-	protected void processLibro(HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {
-	        RequestDispatcher view;
-	        //Vas a plantillaLibro
-	        
-	        view = GestorLibros.mostrarDetallesLibro(request).getRequestDispatcher("plantillaLibro.jsp");
-	       
-	        view.forward(request, response);
-	    }
-	
+
 	
 	//metodos doGet y doPost
          
