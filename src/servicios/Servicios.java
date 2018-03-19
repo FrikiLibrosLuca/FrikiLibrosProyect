@@ -53,7 +53,7 @@ public class Servicios {
 	 * @return Objeto tipo Libro
 	 * 
 	 */
-	public Libro searchLibro(String isbn){
+	public Libro buscarLibro(String isbn){
 		
 		ResultSet rs = bbdd.leerElemento("libros","isbn",isbn);
 		
@@ -66,7 +66,7 @@ public class Servicios {
 	 * Metodo que devuelve la lista de todos los libros
 	 * @return List Libro
 	 */
-	public List<Libro> readListaLibro(){
+	public List<Libro> leerListaLibro(){
 		
 		List<Libro> listadoLibros= new ArrayList<>();
 		ResultSet rs = bbdd.leerListaLibro();
@@ -87,7 +87,7 @@ public class Servicios {
 	 * @param String , int
 	 * @return List Libro
 	 */
-	public List<Libro> readListaLibro(String columna, int valor){
+	public List<Libro> leerListaLibro(String columna, int valor){
 		
 		List<Libro> listadoLibros= new ArrayList<>();
 		ResultSet rs = bbdd.leerListaLibro(columna, valor);
@@ -110,7 +110,7 @@ public class Servicios {
 	 * @param String, String
 	 * @return List Libro
 	 */
-	public List<Libro> readListaLibro(String columna, String valor){
+	public List<Libro> leerListaLibro(String columna, String valor){
 		
 		List<Libro> listadoLibros= new ArrayList<>();
 		ResultSet rs = bbdd.leerListaLibro(columna, valor);
@@ -134,7 +134,7 @@ public class Servicios {
 	 * @param request
 	 * @return int, resultado de la operación 0=ok | -1=error
 	 */
-	public int insertLibro(HttpServletRequest request){
+	public int insertarModificar(HttpServletRequest request){
 	
 		Libro lib = new Libro();
 		int resultado=0;
@@ -165,7 +165,7 @@ public class Servicios {
 	 * @param isbn
 	 * @return int, resultado de la operación 0=ok | -1=error
 	 */
-	public int deleteLibro(String isbn){
+	public int borrarLibro(String isbn){
 		int resultado;
 		
 		resultado=bbdd.borrarLibro(isbn);
