@@ -9,13 +9,13 @@ import java.time.LocalDate;
 
 import model.Libro;
 
-public class ConecJDBC {
+public class ConectorLibros {
 
 	static Connection con = null;
 	private Statement st = null;
 	private ResultSet rs = null;
 	
-	public ConecJDBC(){
+	public ConectorLibros(){
 		abrirConnect();
 	}
 	

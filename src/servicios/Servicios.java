@@ -8,13 +8,13 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import datos.ConecJDBC;
+import datos.ConectorLibros;
 import model.Autor;
 import model.Libro;
 
 public class Servicios {
 	
-	ConecJDBC bbdd= new ConecJDBC();
+	ConectorLibros bbdd= new ConectorLibros();
 	
 	/**
 	 * método que recupera un libro dela bbdd y crea un objeto Libro
