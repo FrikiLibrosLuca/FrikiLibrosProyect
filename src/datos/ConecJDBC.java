@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+
+import model.Libro;
 
 public class ConecJDBC {
 
@@ -84,15 +87,79 @@ public class ConecJDBC {
 		}
 		return rs;
 	
+	}	
+	
+	public int insertLibro(Libro lib, int idAutor){
+		String query = "INSERT INTO libro VALUES ('" + lib.getISBN() + "', '" + lib.getTitulo() + "', '" + lib.getSaga() + "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '" + lib.getCategoria() + "', '" + idAutor + "';";
+		
+		int registrosAfectados = 100; 
+			try {
+				this.st = con.createStatement();
+				registrosAfectados = st.executeUpdate(query);
+			} catch (SQLException e) {
+				System.out.println("Exception SQL: " + e.getMessage());
+				System.out.println("Estado SQL: " + e.getSQLState());
+				System.out.println("Codigo del Error: " + e.getErrorCode());
+			}
+			return registrosAfectados;		
 	}
 	
-	/*Estos métodos se realizarán en un futuro*/
-	public void addElemento(){}
+	public int modificarLibro(Libro lib, int idAutor){
+		String query = "UPDATE libros SET titulo='" + lib.getTitulo() + "', saga='" + lib.getSaga() + "', fecha_edicion= STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d), idioma='" + lib.getIdioma() + "', categoria='" + lib.getCategoria() + "', id_autor='" + idAutor + "' WHERE isbn='" + lib.getISBN() + "';";
+		int registrosAfectados = 100; 
+		try {
+			this.st = con.createStatement();
+			registrosAfectados = st.executeUpdate(query);
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return registrosAfectados;	
+	}
 	
-	public void deleteElemento(){}
+	public int borrarLibro(String isbn){
+		String query = "DELETE FROM libros WHERE isbn='" + isbn + "'";
+		int registrosAfectados = 100; 
+		try {
+			this.st = con.createStatement();
+			registrosAfectados = st.executeUpdate(query);
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return registrosAfectados;
+	}
 	
-	public void modifyElemento(){}
+	public ResultSet leerListaLibro(String columna, String valor){
+		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
+		
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+			
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return rs;
+	}
 	
-	
+	public ResultSet leerListaLibro(String columna, int valor){
+		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
+		
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+			
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return rs;
+	}	
 	
 }
