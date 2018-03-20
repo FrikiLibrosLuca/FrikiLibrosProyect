@@ -88,7 +88,7 @@ public class GestorLibros {
 		
 		Libro libro = serv.buscarLibro(info);
 		
-		request.setAttribute("Libro", libro);
+		request.setAttribute("libro", libro);
 		
 		return request;
 	}

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,26 +10,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Información del libro</title>
+    <title>Menú para modificar libros</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <link href="css/main.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-    <link rel="stylesheet" href="css/main.css">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +56,7 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <!-- 
+               <!-- 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -110,7 +109,7 @@
                     
                 </li>
                 -->
-
+                
                 <!--
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -191,7 +190,7 @@
                    
                 </li>
                 -->
-
+                
                 <!--
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -253,7 +252,7 @@
                     
                 </li>
                 -->
-
+                
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -278,9 +277,9 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-
+                       
                         <li class="sidebar-search" id="categoria"> Categorías
-                            <!--
+                           <!--
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
@@ -289,10 +288,10 @@
                                 </button>
                             </span>
                             </div>
-                            -->
+                            -->    
                         </li>
-
-
+                        
+                        
                         <li>
                             <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Fantasía</a>
                         </li>
@@ -394,49 +393,81 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <header>
-                        <h1 class="page-header">FrikiLibros</h1>
-                    </header>
-                    <main>
+                    <h1 class="page-header">FrikiLibros</h1>
+                </div>
+                <main>
                         <div class="panel panel-primary">
-                            <header class="panel-heading tituloLibro">Título del Libro </header>
+                            <header class="panel-heading tituloLibro">Modificar Libro </header>
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <figure>
-                                                <img src="#" alt="titulo del libro">
-                                            </figure>
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form" action="Servlet" method="GET">
+                                        <div class="form-group">
+                                            <label form="isbnLibro">ISBN</label>
+                                             <input class="form-control" id="disabledInput  isbnLibro" name="isbnLibro" value="isbn" type="text" disabled>
+                                             
                                         </div>
-                                        <!-- /.panel-heading -->
-                                        <div class="col-lg-6">
-                                            <p class="plantillasLibro">Título: <span>${libro.titulo}</span></p>
-                                            <p class="plantillasLibro">ISBN: <span>${libro.isbn}</span></p>
-                                            <p class="plantillasLibro">Autor: <span>${libro.autor.name}</span></p>
-                                            <p class="plantillasLibro">Saga: <span>${libro.saga}</span></p>
-                                            <p class="plantillasLibro">Fecha de publicación: <span>${libro.fechaEdicion}</span></p>
-                                            <p class="plantillasLibro">Categoría: <span>${libro.categoria}</span></p>
-                                            <p class="plantillasLibro">Idioma: <span>${libro.idioma}</span></p>
-                                            
+                                        <div class="form-group">
+                                            <label for="modificarTitulo">Título</label>
+                                            <input class="form-control" name="modificarTitulo" id="modificarTitulo" value="titulo">
                                         </div>
-                                        <!-- /.panel-body -->
-                                    </div>
+                                        <div class="form-group">
+                                            <label form="modificarFechaEdicion">Fecha de Edición</label>
+                                            <input type="date" class="form-control" id="fechaEdicionModificar" value="2018-12-01">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="modificarIdioma">Idioma</label>
+                                            <input class="form-control" name="modificarIdioma" id="modificarIdioma" value="idioma">
+                                        </div>                                        
+                                        <div class="form-group">
+                                            <label for="modificarAutor">Autor</label>
+                                            <select class="form-control">
+                                                <c:forEach var="autor" items="${listaAutor}">
+                                                	<option name="modificarAutor" value="${autor}">${autor.name}</option>
+                                         		</c:forEach>
+                                                <!-- Expression language -->
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="modificarCategoria">Categoría</label>
+                                            <select class="form-control">
+                                                <option name="categoria" value="fantasia">Fantasía</option>
+                                                <option name="categoria" value="romantica">Romántica</option>
+                                                <option name="categoria" value="infantil">Infantil</option>
+                                                <option name="categoria" value="historica">Histórica</option>
+                                                <option name="categoria" value="policiaca">Policíaca</option>
+                                                <option name="categoria" value="terror">Terror</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                        <button type="reset" class="btn btn-default">Reset Button</button>
+                                        <input type="hidden" name="opcion" value="insertarLibro">
+                                    </form>
+                                </div>
+                                
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
                                     <!-- /.panel -->
                                 </div>
                             </div>
                         </div>
                     </main>
-
-
-                </div>
                 <!-- /.col-lg-12 -->
-            </div>
-            <div>
-
             </div>
         </div>
         <!-- /#page-wrapper -->
