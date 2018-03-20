@@ -12,3 +12,20 @@
     font-size: 25px;
     color: #428bca;
 }
+
+
+section.elementoLibro figure img{
+    display: block;
+    margin: auto;
+    width:60%;
+   
+}
+
+section.elementoLibro figure figcaption{
+    
+    text-align: center;
+    padding:5% 0 15% 0;
+    font-size: 1.2em;
+    font-weight:bold;
+    
+}
