@@ -29,3 +29,15 @@ section.elementoLibro figure figcaption{
     font-weight:bold;
     
 }
+
+#imgInfoLibro {
+    width: 50%;
+}
+
+.datosInfoLibro {
+    padding-top: 5%;
+}
+
+#figureInfoLibro {
+    margin-left: 25%;
+}

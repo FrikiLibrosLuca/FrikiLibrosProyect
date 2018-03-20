@@ -408,12 +408,12 @@
                                 <div class="col-lg-10">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <figure>
-                                                <img src="#" alt="titulo del libro">
+                                            <figure id="figureInfoLibro">
+                                                <img id="imgInfoLibro" src="imagen/prueba1.jpg" alt="titulo del libro">
                                             </figure>
                                         </div>
                                         <!-- /.panel-heading -->
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 datosInfoLibro">
                                             <p class="plantillasLibro">Título: <span>${libro.titulo}</span></p>
                                             <p class="plantillasLibro">ISBN: <span>${libro.isbn}</span></p>
                                             <p class="plantillasLibro">Autor: <span>${libro.autor.name}</span></p>
