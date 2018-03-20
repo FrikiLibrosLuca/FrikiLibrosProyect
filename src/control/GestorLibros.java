@@ -1,6 +1,5 @@
 package control;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +25,7 @@ public class GestorLibros {
 				String isbn = request.getParameter("isbn");
 				lib= serv.buscarLibro(isbn);
 				request.setAttribute("libro", lib);
+				
 				break;
 			case "insertarLibro":
 				codError = serv.insertarModificar(request);
@@ -71,7 +71,7 @@ public class GestorLibros {
 	}
 	
 	
-	private static boolean isNumeric(String cadena){
+	private boolean isNumeric(String cadena){
 		try {
 			Integer.parseInt(cadena);
 			return true;

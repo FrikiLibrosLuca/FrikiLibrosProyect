@@ -56,8 +56,8 @@ public class ConectorUsuarios {
 		}		
 	}
 	
-	public ResultSet leerUsuario(String correo){
-		String query = "SELECT * FROM usuarios WHERE correo='" + correo + "'";
+	public ResultSet leerUsuario(String usuario){
+		String query = "SELECT * FROM usuarios WHERE usuario='" + usuario + "'";
 		try {
 			this.st = con.createStatement();
 			this.rs = st.executeQuery(query);
@@ -70,9 +70,9 @@ public class ConectorUsuarios {
 		return rs;
 	}
 	
-	public int insertarUsuario(Usuario user, boolean admin){
+	public int insertarUsuario(Usuario user){
 		int privilegios = 0;
-		if (admin)
+		if (user.isPrivilegios())
 			privilegios = 1;
 			
 		String query = "INSERT INTO usuarios VALUES ('" + user.getUsuario() + "', '" + user.getCorreo() + "', '" + user.getContrasena() +","+privilegios+ ";";
@@ -89,8 +89,8 @@ public class ConectorUsuarios {
 			return registrosAfectados;		
 	}
 
-	public int borrarUsuario(String correo){
-		String query = "DELETE FROM usuarios WHERE correo='" + correo + "'";
+	public int borrarUsuario(String usuario){
+		String query = "DELETE FROM usuarios WHERE usuario='" + usuario + "'";
 		int registrosAfectados = -1; 
 		try {
 			this.st = con.createStatement();
