@@ -55,7 +55,7 @@ public class ServiciosUsuario {
 	
 	
 	
-	public int borrarLibro(String usuario){
+	public int borrarUsuario(String usuario){
 		int resultado;
 		
 		resultado=bbdd.borrarUsuario(usuario);
