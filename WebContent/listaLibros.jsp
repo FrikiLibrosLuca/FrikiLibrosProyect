@@ -1,5 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -12,24 +13,22 @@
     <title>FrikiLibros</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <link href="css/main.css" rel="stylesheet">
-    
-    <link href="css/listado.css" rel="stylesheet">
-   
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,12 +51,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <!-- <a class="navbar-brand" href="index.html">SB Admin v2.0</a> -->
             </div>
-           
+            <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-               
-                
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -84,7 +82,16 @@
                     <ul class="nav" id="side-menu">
                        
                         <li class="sidebar-search" id="categoria"> Categorías
-                             
+                           <!--
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            -->    
                         </li>
                         
                         
@@ -93,7 +100,16 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
-                           
+                            <!--
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            -->
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
@@ -104,15 +120,75 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-github-alt fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
-                           
+                            <!--
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="panels-wells.html">Panels and Wells</a>
+                                </li>
+                                <li>
+                                    <a href="buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="notifications.html">Notifications</a>
+                                </li>
+                                <li>
+                                    <a href="typography.html">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="icons.html"> Icons</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grid</a>
+                                </li>
+                            </ul>
+                            -->
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-github-alt fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
-                           
+                            <!--
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>
+                                    
+                                </li>
+                            </ul>
+                            -->
                             <!-- /.nav-second-level -->
                         </li>
-                       
+                        <!--
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="blank.html">Blank Page</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">Login Page</a>
+                                </li>
+                            </ul>
+                        </li>
+                        -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -126,39 +202,17 @@
                     <h1 class="page-header">FrikiLibros</h1>
                 </div>
                  <section >
-                   <section class="col-lg-3 col-md-4 col-sm-6 elementoLibro">
+                 <c:forEach var="libro" items="${listadoLibros}">
+                 <section class="col-lg-3 col-md-4 col-sm-6 elementoLibro">
                       <figure>
-                          <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Wizard%27s_First_Rule.jpg"/>
+                          <img src="${libro.foto}"/>
                           <figcaption>
-                              Wizard's First Rule
+                             "${libro.titulo}"
                           </figcaption>
                       </figure>
                    </section>
-                    <section class="col-lg-3 col-md-4 col-sm-6 elementoLibro">
-                      <figure>
-                          <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Wizard%27s_First_Rule.jpg"/>
-                          <figcaption>
-                              Wizard's First Rule
-                          </figcaption>
-                      </figure>
-                   </section>
-                   <section class="col-lg-3 col-md-4 col-sm-6 elementoLibro">
-                      <figure>
-                          <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Wizard%27s_First_Rule.jpg"/>
-                          <figcaption>
-                              Wizard's First Rule
-                          </figcaption>
-                      </figure>
-                   </section>
-                   <section class="col-lg-3 col-md-4 col-sm-6 elementoLibro">
-                      <figure>
-                          <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Wizard%27s_First_Rule.jpg"/>
-                          <figcaption>
-                              Wizard's First Rule
-                          </figcaption>
-                      </figure>
-                   </section>
-                </section>
+                 </c:forEach>
+               </section>
                
             </div>
         </div>

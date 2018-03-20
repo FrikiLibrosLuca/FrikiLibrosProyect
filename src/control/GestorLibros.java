@@ -41,18 +41,18 @@ public class GestorLibros {
 				
 				if(request.getParameter("columna").isEmpty()){
 					listadoLibros = serv.leerListaLibro();
-					request.setAttribute("libro", listadoLibros);
+					request.setAttribute("listadoLibros", listadoLibros);
 				}
 				else{
 					if(this.isNumeric(request.getParameter("valor"))){
 						valorInt =Integer.parseInt(request.getParameter("valor")); 
 						listadoLibros= serv.leerListaLibro(columna, valorInt);
-						request.setAttribute("libro", listadoLibros);
+						request.setAttribute("listadoLibros", listadoLibros);
 					}
 					else{
 						valorString = request.getParameter("valor");
 						listadoLibros= serv.leerListaLibro(columna, valorString);
-						request.setAttribute("libro", listadoLibros);
+						request.setAttribute("listadoLibros", listadoLibros);
 					}					
 				}
 				break;		
