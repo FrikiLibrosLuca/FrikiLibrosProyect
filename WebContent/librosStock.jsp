@@ -1,11 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,25 +23,14 @@
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <link href="css/main.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/main.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="css/main.css" rel="stylesheet">
 
 </head>
-
 <body>
 
     <div id="wrapper">
 
-        <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -55,73 +39,128 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- <a class="navbar-brand" href="index.html">SB Admin v2.0</a> -->
+               
             </div>
-            <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-               
-
+    <!-- Campanita editor de cosas -GESTOR  -->
                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#menuPanel">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    
+                    <ul class="dropdown-menu dropdown-user">
+              <!--Aqui deberia haber un escalon-->
+                    <li>
+                     <div class="sidebar-nav navbar-collapse"> 
+                        <ul class="nav" id="side-menu" id="menuPanel"> 
+                          
+                    
+                       
+<!-------------------------------------------------------->
+                        <li>
+                          <a href="#">
+                             <i class="fa fa-tasks fa-fw"></i> Editar Libros
+                                <span class="fa arrow"></span> </a>               
+                                <ul class="nav nav-second-level">
+                                   <div>
+                                    <li>
+                                        <a href="Servler">Insertar Libro</a>
+                                    </li>
+                                    <li>
+                                        <a href="Servler">Eliminar Libro</a>
+                                    </li>
+                                    <li>
+                                        <a href="Servler">Actualizar Libro</a>
+                                    </li>
+                                    <li>
+                                        <a href="Servler">Mostrar Libro</a>
+                                    </li>
+                                    </div>
+                                </ul>     
+                                          
+                           </li>
+                                <li class="divider"></li>
+                        <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-tasks fa-fw"></i> Editar Usuarios
+                                        </div>
+                                    </a>
+                        </li>
+                                <li class="divider"></li> <!---ESTO NO SE QUE ES-->
+                        <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-tasks fa-fw"></i> Editar Provedores
+                                        </div>
+                                    </a>
+                        </li>
+  <!-------------------------------------------------------->
+                           
+                        </ul>
+                      </div> 
+                    </li>   
+                    </ul>
+                </li>
+    
+    
+<!--Personitaa - Usuario-->
+                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Iniciar sesiÃ³n</a>
-                        
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Iniciar sesión</a>
+                        </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar SesiÃ³n</a>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-user -->
+                    
                 </li>
-                <!-- /.dropdown -->
+               
             </ul>
-            <!-- /.navbar-top-links -->
+           
+           
+           
+     <!-- Menu de la izquierda -->
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-
-                        <li class="sidebar-search" id="categoria"> CategorÃ­as
-                           
-                        </li>
-
-
-                        <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> FantasÃ­a</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> RomÃ¡ntica<!--<span class="fa arrow"></span>--></a>
+                       
+                        <li class="sidebar-search" id="categoria"> Categorías
                             
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Infantil</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> HistÃ³rica</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
-                            
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
-                           
-                            <!-- /.nav-second-level -->
                         </li>
                         
-                       
+                        
+                        <li>
+                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Fantasía</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
+                           
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Infantil</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Histórica</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
+                            
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
+                          
+                        </li>
+                        
                     </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.navbar-static-side -->
         </nav>
-
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -130,7 +169,7 @@
                     </header>
                     <main>
                         <div class="panel panel-default">
-                            <header class="panel-heading tituloLibro">TÃ­tulo del Libro </header>
+                            <header class="panel-heading tituloLibro">Título del Libro </header>
                              <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
