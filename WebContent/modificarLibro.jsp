@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Men√∫ para modificar libros</title>
+    <title>Men˙ para modificar libros</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -258,14 +258,14 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Iniciar sesi√≥n</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Administrador</a>
                         </li>
                         <!--
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         -->
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesi√≥n</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesi√≥n</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -278,7 +278,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                        
-                        <li class="sidebar-search" id="categoria"> Categor√≠as
+                        <li class="sidebar-search" id="categoria"> CategorÌas
                            <!--
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -293,10 +293,10 @@
                         
                         
                         <li>
-                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Fantas√≠a</a>
+                            <a href="Servlet?columna=terror&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Rom√°ntica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -310,20 +310,20 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Infantil</a>
+                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Hist√≥rica</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia FicciÛn</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> FantasÌa …pica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="panels-wells.html">Panels and Wells</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
+                                    <a href="buttons.html">Buttons</a> 
                                 </li>
                                 <li>
                                     <a href="notifications.html">Notifications</a>
@@ -342,7 +342,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=romantica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Rom·ntica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -412,43 +412,43 @@
                                     <form role="form" action="Servlet" method="GET">
                                         <div class="form-group">
                                             <label form="isbnLibro">ISBN</label>
-                                             <input class="form-control" id="disabledInput  isbnLibro" name="isbnLibro" value="isbn" type="text" disabled>
+                                             <input class="form-control" id="disabledInput  isbnLibro" name="isbn" value="${libro.isbn}" type="text" disabled>
                                              
                                         </div>
                                         <div class="form-group">
-                                            <label for="modificarTitulo">T√≠tulo</label>
-                                            <input class="form-control" name="modificarTitulo" id="modificarTitulo" value="titulo">
+                                            <label for="modificarTitulo">TÌtulo</label>
+                                            <input class="form-control" name="titulo" id="modificarTitulo" value="${libro.titulo}">
                                         </div>
                                         <div class="form-group">
-                                            <label form="modificarFechaEdicion">Fecha de Edici√≥n</label>
-                                            <input type="date" class="form-control" id="fechaEdicionModificar" value="2018-12-01">
+                                            <label form="modificarFechaEdicion">Fecha de EdiciÛn</label>
+                                            <input type="date" class="form-control" id="fechaEdicionModificar" name="fecha" value="${libro.fecha}">
                                         </div>
                                         <div class="form-group">
                                             <label for="modificarIdioma">Idioma</label>
-                                            <input class="form-control" name="modificarIdioma" id="modificarIdioma" value="idioma">
+                                            <input class="form-control" name="idioma" id="modificarIdioma" value="${libro.idioma}">
                                         </div>                                        
                                         <div class="form-group">
                                             <label for="modificarAutor">Autor</label>
                                             <select class="form-control">
                                                 <c:forEach var="autor" items="${listaAutor}">
-                                                	<option name="modificarAutor" value="${autor}">${autor.name}</option>
+                                                	<option name="autor" value="${autor}">${autor.name}</option>
                                          		</c:forEach>
                                                 <!-- Expression language -->
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="modificarCategoria">Categor√≠a</label>
+                                            <label for="modificarCategoria">CategorÌa</label>
                                             <select class="form-control">
-                                                <option name="categoria" value="fantasia">Fantas√≠a</option>
-                                                <option name="categoria" value="romantica">Rom√°ntica</option>
-                                                <option name="categoria" value="infantil">Infantil</option>
-                                                <option name="categoria" value="historica">Hist√≥rica</option>
-                                                <option name="categoria" value="policiaca">Polic√≠aca</option>
                                                 <option name="categoria" value="terror">Terror</option>
+                                                <option name="categoria" value="thriller">Thriller</option>
+                                                <option name="categoria" value="dragones">Dragones</option>
+                                                <option name="categoria" value="cienciaFiccion">Ciencia FicciÛn</option>
+                                                <option name="categoria" value="fantasiaEpica">FantasÌa …pica</option>
+                                                <option name="categoria" value="romantica">Rom·ntica</option>
                                             </select>
                                         </div>
                                         <button type="submit" class="btn btn-default">Submit Button</button>
-                                        <button type="reset" class="btn btn-default">Reset Button</button>
+                                        <!-- <button type="reset" class="btn btn-default">Reset Button</button> -->
                                         <input type="hidden" name="opcion" value="insertarLibro">
                                     </form>
                                 </div>
@@ -476,21 +476,21 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+    <script src="vendor/raphael/raphael.min.js"></script>
+    <script src="vendor/morrisjs/morris.min.js"></script>
+    <script src="data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="dist/js/sb-admin-2.js"></script>
 
 </body>
 
