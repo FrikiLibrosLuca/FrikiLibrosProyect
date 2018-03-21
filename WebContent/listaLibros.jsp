@@ -95,65 +95,26 @@
                         </li>
                         
                         
-                        <li>
-                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Fantas√≠a</a>
+                       <li>
+                            <a href="Servlet?columna=terror&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Rom√°ntica<!--<span class="fa arrow"></span>--></a>
-                            <!--
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            -->
-                            <!-- /.nav-second-level -->
+                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Infantil</a>
+                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Hist√≥rica</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia FicciÛn</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
-                            <!--
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            -->
-                            <!-- /.nav-second-level -->
-                        </li>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> FantasÌa …pica<!--<span class="fa arrow"></span>--></a>
+                            </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
-                          
-                            <!-- /.nav-second-level -->
-                        </li>
-                       
-                        
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
+                            <a href="Servlet?columna=romantica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Rom·ntica<!--<span class="fa arrow"></span>--></a>
+                        </li> 
+                   </ul>
+                  </div>
             </div>
             <!-- /.navbar-static-side -->
         </nav>
