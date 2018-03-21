@@ -25,14 +25,21 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
 		RequestDispatcher view;
 		 
+		
+		
+		
 		//HttpSession session = request.getSession(); 
 		
-		gestor.gestion(request,response);
-       
-		view =request.getRequestDispatcher(request.getParameter("plantilla"));
-	       
+		request=gestor.gestion(request,response);
+		
+		String plantilla = (String) request.getAttribute("plantilla");
+		view =request.getRequestDispatcher(plantilla);
+		
         view.forward(request, response);
 		
+		
+		
+				
     }
             
 	 
