@@ -277,7 +277,9 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                       
+                       <li class="sidebar-search">
+                       		<a href="Servlet?opcion=listadoGeneral"> Listado General</a>
+						</li>
                         <li class="sidebar-search" id="categoria"> Categorías
                            <!--
                             <div class="input-group custom-search-form">
@@ -293,10 +295,10 @@
                         
                         
                         <li>
-                            <a href="Servlet?columna=terror&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
+                            <a href="Servlet?columna=terror&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=thriller&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -310,13 +312,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
+                            <a href="Servlet?columna=dragones&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcionlistadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=fantasiaEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -342,7 +344,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="Servlet?columna=romantica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=romantica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
