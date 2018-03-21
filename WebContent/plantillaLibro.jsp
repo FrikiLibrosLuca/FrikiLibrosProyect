@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>InformaciÃ³n del libro</title>
+    <title>Información del libro</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -259,14 +259,14 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="login.html"><i class="fa fa-user fa-fw"></i> Iniciar sesiÃ³n</a>
+                        <li><a href="login.html"><i class="fa fa-user fa-fw"></i> Iniciar sesión</a>
                         </li>
                         <!--
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         -->
                         <li class="divider"></li>
-                        <li><a href="Servlet"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -279,7 +279,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
 
-                        <li class="sidebar-search" id="categoria"> Categorias
+                        <li class="sidebar-search" id="categoria"> Categorías
                             <!--
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -294,10 +294,10 @@
 
 
                         <li>
-                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
+                            <a href="Servlet?columna=terror&opcion=leerListaLibrol"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -311,13 +311,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
+                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=fantasioEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -343,7 +343,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=romantica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -409,7 +409,7 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <figure id="figureInfoLibro">
-                                                <img id="imgInfoLibro" src="imagen/prueba1.jpg" alt="titulo del libro">
+                                                <img id="imgInfoLibro" src="${libro.foto}" alt="${libro.titulo}">
                                             </figure>
                                         </div>
                                         <!-- /.panel-heading -->
@@ -418,8 +418,8 @@
                                             <p class="plantillasLibro">ISBN: <span>${libro.isbn}</span></p>
                                             <p class="plantillasLibro">Autor: <span>${libro.autor.name}</span></p>
                                             <p class="plantillasLibro">Saga: <span>${libro.saga}</span></p>
-                                            <p class="plantillasLibro">Fecha de publicaciÃ³n: <span>${libro.fechaEdicion}</span></p>
-                                            <p class="plantillasLibro">CategorÃ­a: <span>${libro.categoria}</span></p>
+                                            <p class="plantillasLibro">Fecha de publicación: <span>${libro.fechaEdicion}</span></p>
+                                            <p class="plantillasLibro">Categoría: <span>${libro.categoria}</span></p>
                                             <p class="plantillasLibro">Idioma: <span>${libro.idioma}</span></p>
                                             
                                         </div>
@@ -445,21 +445,21 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+    <script src="vendor/raphael/raphael.min.js"></script>
+    <script src="vendor/morrisjs/morris.min.js"></script>
+    <script src="data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="dist/js/sb-admin-2.js"></script>
 
 </body>
 
