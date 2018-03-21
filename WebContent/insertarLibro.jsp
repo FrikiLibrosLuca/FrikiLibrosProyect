@@ -10,22 +10,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Men√∫ para insertar Libros</title>
+    <title>MenÌ para insertar Libros</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <link href="css/main.css" rel="stylesheet">
 
@@ -258,14 +258,14 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href=""><i class="fa fa-user fa-fw"></i> ${usario.name}</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Administrador</a>
                         </li>
                         <!--
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         -->
                         <li class="divider"></li>
-                        <li><a href="Servlet"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesi√≥n</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar SesiÛn</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -278,7 +278,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                        
-                        <li class="sidebar-search" id="categoria"> Categor√≠as
+                        <li class="sidebar-search" id="categoria"> CategorÌas
                            <!--
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -293,10 +293,10 @@
                         
                         
                         <li>
-                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Fantas√≠a</a>
+                            <a href="Servlet?columna=terror&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Rom√°ntica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -310,13 +310,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Infantil</a>
+                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Hist√≥rica</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia FicciÛn</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> FantasÌa …pica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -342,7 +342,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=romantica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Rom·ntica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -411,26 +411,26 @@
                                 <div class="col-lg-6">
                                     <form role="form" action="Servlet" method="GET">
                                         <div class="form-group">
-                                            <label for="isbnLibro">T√≠tulo</label>
-                                            <input class="form-control" name="isbnLibro" id="isbnLibro" value="0-000-00000-0">
+                                            <label for="isbnLibro">ISBN</label>
+                                            <input class="form-control" name="ISBN" id="isbnLibro" value="000">
                                         </div>
                                         <div class="form-group">
-                                            <label for="modificarTitulo">T√≠tulo</label>
-                                            <input class="form-control" name="modificarTitulo" id="modificarTitulo" placeholder="Pezcadilla">
+                                            <label for="modificarTitulo">TÌtulo</label>
+                                            <input class="form-control" name="titulo" id="modificarTitulo" placeholder="Pezcadilla">
                                         </div>
                                         <div class="form-group">
-                                            <label form="modificarFechaEdicion">Fecha de Edici√≥n</label>
-                                            <input type="date" class="form-control" id="fechaEdicionModificar">
+                                            <label form="modificarFechaEdicion">Fecha de EdiciÛn</label>
+                                            <input type="date" class="form-control" name="fecha" id="fechaEdicionModificar">
                                         </div>
                                         <div class="form-group">
                                             <label for="modificarIdioma">Idioma</label>
-                                            <input class="form-control" name="modificarIdioma" id="modificarIdioma" placeholder="Ingl√©s">
+                                            <input class="form-control" name="idioma" id="modificarIdioma" placeholder="Ingl√©s">
                                         </div>                                        
                                         <div class="form-group">
                                             <label for="modificarAutor">Autor</label>
                                             <select class="form-control">
                                                 <c:forEach var="autor" items="${listaAutor}">
-                                                	<option name="modificarAutor" value="${autor}">${autor.name}</option>
+                                                	<option name="autor" value="${autor}">${autor.name}</option>
                                          		</c:forEach>
                                                 <!-- Expression language -->
                                             </select>
@@ -438,12 +438,12 @@
                                         <div class="form-group">
                                             <label for="modificarCategoria">Categor√≠a</label>
                                             <select class="form-control">
-                                                <option name="categoria" value="fantasia">Fantas√≠a</option>
-                                                <option name="categoria" value="romantica">Rom√°ntica</option>
-                                                <option name="categoria" value="infantil">Infantil</option>
-                                                <option name="categoria" value="historica">Hist√≥rica</option>
-                                                <option name="categoria" value="policiaca">Polic√≠aca</option>
                                                 <option name="categoria" value="terror">Terror</option>
+                                                <option name="categoria" value="thriller">Thriller</option>
+                                                <option name="categoria" value="dragones">Dragones</option>
+                                                <option name="categoria" value="cienciaFiccion">Ciencia FicciÛn</option>
+                                                <option name="categoria" value="fantasiaEpica">FantasÌa …pica</option>
+                                                <option name="categoria" value="romantica">Rom·ntica</option>
                                             </select>
                                         </div>
                                         <button type="submit" class="btn btn-default" >Insertar</button>
@@ -475,21 +475,21 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+    <script src="vendor/raphael/raphael.min.js"></script>
+    <script src="vendor/morrisjs/morris.min.js"></script>
+    <script src="data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="dist/js/sb-admin-2.js"></script>
 
 </body>
 
