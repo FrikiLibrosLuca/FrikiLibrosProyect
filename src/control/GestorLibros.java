@@ -35,18 +35,18 @@ public class GestorLibros {
 			String isbn1 = rq.getParameter("isbn");
 			codError = serv.borrarLibro(isbn1);
 			break;
+		
+		case "listadoGeneral":
+			listadoLibros = serv.leerListaLibro();
+			rq.setAttribute("listadoLibros", listadoLibros);
+			rq.setAttribute("plantilla", "listaLibros.jsp");
+			break;
+		
 		case "leerListaLibro":
 			String columna = rq.getParameter("columna");
 			int valorI;
 			String valorS;
-
-			if (columna.equals("sinCategoria")) {
-				listadoLibros = serv.leerListaLibro();
-				rq.setAttribute("listadoLibros", listadoLibros);
-				rq.setAttribute("plantilla", "listaLibros.jsp");
-			}
-
-			else {
+			
 				if (this.isNumeric(rq.getParameter("valor"))) {
 					valorI = Integer.parseInt(rq.getParameter("valor"));
 					listadoLibros = serv.leerListaLibro(columna, valorI);
@@ -58,17 +58,11 @@ public class GestorLibros {
 					rq.setAttribute("listadoLibros", listadoLibros);
 					rq.setAttribute("plantilla", "listaLibros.jsp");
 				}
-			}
+			
 			break;
 		}
 
-		if (codError == -1) {
-			rq.setAttribute("resultado", "Ha habido un error a la hora de modificar o insertar o eliminar");
-			rq.setAttribute("plantilla", "popup.html");
-		} else if (codError >= 0) {
-			rq.setAttribute("resultado", "Insertado o modificado o eliminar correctamente");
-			rq.setAttribute("plantilla", "popup.html");
-		}
+		
 
 		return rq;
 
@@ -81,6 +75,17 @@ public class GestorLibros {
 		} catch (NumberFormatException nfe) {
 			return false;
 		}
+	}
+	
+	private HttpServletRequest popUp(int codError, HttpServletRequest rq){
+		if (codError == -1) {
+			rq.setAttribute("resultado", "Ha habido un error a la hora de modificar o insertar o eliminar");
+			rq.setAttribute("plantilla", "popup.html");
+		} else if (codError >= 0) {
+			rq.setAttribute("resultado", "Insertado o modificado o eliminar correctamente");
+			rq.setAttribute("plantilla", "popup.html");
+		}
+		return rq;
 	}
 
 }
