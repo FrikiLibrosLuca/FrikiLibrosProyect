@@ -40,7 +40,7 @@ public class GestorLibros {
 			int valorI;
 			String valorS;
 
-			if (columna.isEmpty()) {
+			if (columna.equals("sinCategoria")) {
 				listadoLibros = serv.leerListaLibro();
 				rq.setAttribute("listadoLibros", listadoLibros);
 				rq.setAttribute("plantilla", "listaLibros.jsp");

@@ -25,7 +25,7 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
 		RequestDispatcher view;
 		 
-		System.out.println("--- "+request.getParameter("opcion"));
+		
 		
 		
 		//HttpSession session = request.getSession(); 
@@ -33,7 +33,6 @@ public class Servlet extends HttpServlet {
 		request=gestor.gestion(request,response);
 		
 		String plantilla = (String) request.getAttribute("plantilla");
-		System.out.println("---------------- "+plantilla);
 		view =request.getRequestDispatcher(plantilla);
 		
         view.forward(request, response);
