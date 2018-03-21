@@ -149,7 +149,9 @@ public class ConectorLibros {
 	
 	
 	public ResultSet leerListaLibro(String columna, String valor){
-		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
+		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
+				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + valor + "' and a.id=l.id_autor;";
+		
 		
 		try {
 			this.st = con.createStatement();
@@ -164,7 +166,9 @@ public class ConectorLibros {
 	}
 	
 	public ResultSet leerListaLibro(String columna, int valor){
-		String query = "SELECT * FROM libros WHERE " + columna + "='" + valor + "';";
+		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
+				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "=" + valor + " and a.id=l.id_autor;";
+		
 		
 		try {
 			this.st = con.createStatement();
@@ -179,7 +183,9 @@ public class ConectorLibros {
 	}	
 	
 	public ResultSet leerListaLibro(){
-		String query = "SELECT * FROM libros;";
+		String query = "SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
+				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE a.id=l.id_autor and l.isbn=i.isbn;";
+		
 		
 		try {
 			this.st = con.createStatement();

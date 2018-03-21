@@ -35,6 +35,7 @@ public class ServiciosLibro {
 				lib.setFechaEdicion(rs.getString("fecha_edicion"));
 				lib.setIdioma(rs.getString("idioma"));
 				lib.setCategoria(rs.getString("categoria"));
+				lib.setFoto(rs.getString("ruta"));
 				au.setNombreAutor(rs.getString("nombre"));
 				au.setApellidoAutor(rs.getString("apellido"));
 			
@@ -70,10 +71,12 @@ public class ServiciosLibro {
 		
 		List<Libro> listadoLibros= new ArrayList<>();
 		ResultSet rs = bbdd.leerListaLibro();
-				
+	
 		try {
 			while(rs.next()){
 				listadoLibros.add(obtenerLibro(rs));
+				
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
