@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="e">
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Información del libro</title>
+    <title>FrikiLibros</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,10 +25,8 @@
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <link href="css/main.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/main.css">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +55,7 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <!-- 
+               <!-- 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -105,12 +103,12 @@
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul> 
                     
                     
                 </li>
                 -->
-
+                
                 <!--
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -191,7 +189,7 @@
                    
                 </li>
                 -->
-
+                
                 <!--
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -253,7 +251,7 @@
                     
                 </li>
                 -->
-
+                
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -278,9 +276,11 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-
+                       <li class="sidebar-search">
+                       		<a href="Servlet?opcion=listadoGeneral"> Listado General</a>
+						</li>
                         <li class="sidebar-search" id="categoria"> Categorías
-                            <!--
+                           <!--
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
@@ -289,15 +289,15 @@
                                 </button>
                             </span>
                             </div>
-                            -->
+                            -->    
                         </li>
-
-
+                        
+                        
                         <li>
-                            <a href="Servlet?columna=terror&opcion=leerListaLibrol"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
+                            <a href="Servlet?columna=terror&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=thriller&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -311,13 +311,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
+                            <a href="Servlet?columna=dragones&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=fantasioEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -343,7 +343,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="Servlet?columna=romantica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=romantica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -368,11 +368,12 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
+                                  
                                     
                                 </li>
                             </ul>
                             -->
-                            <!-- /.nav-second-level -->
+                            <!-- /.nav-second-level --> 
                         </li>
                         <!--
                         <li>
@@ -393,8 +394,6 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
