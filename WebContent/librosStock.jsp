@@ -134,33 +134,28 @@
                             
                         </li>
                         
-                        
-                        <li>
-                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Fantasía</a>
+                         <li>
+                            <a href="Servlet?columna=terror&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
-                           
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Infantil</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Histórica</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
+                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller</a>
                             
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
-                          
+                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
+                        <li>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
+                        </li>
+                        <li>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
+                          
                         
                     </ul>
                 </div>
             </div>
         </nav>
+        
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
