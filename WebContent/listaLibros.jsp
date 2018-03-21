@@ -77,46 +77,39 @@
             </ul>
             <!-- /.navbar-top-links -->
 
+            <!-- Menu de la izquierda -->
+
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                        
+                       <li class="sidebar-search" id="categoria">
+                            <a href="Servlet?opcion=listadoGeneral"> Listado General </a>
+                        </li>
+                        
                         <li class="sidebar-search" id="categoria"> Categorías
-                           <!--
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            -->    
-                        </li>
+						</li>
                         
+                         <li>
+                            <a href="Servlet?columna=terror&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
+                        </li>
+                        <li>
+                            <a href="Servlet?columna=thriller&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Thriller</a>
+                            
+                        </li>
+                        <li>
+                            <a href="Servlet?columna=dragones&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
+                        </li>
+                        <li>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
+                        </li>
+                        <li>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
+                          
                         
-                       <li>
-                            <a href="Servlet?columna=terror&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
-                        </li>
-                        <li>
-                            <a href="Servlet?columna=thriller&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
-                        </li>
-                        <li>
-                            <a href="Servlet?columna=dragones&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
-                        </li>
-                        <li>
-                            <a href="Servlet?columna=cienciaFiccion&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
-                        </li>
-                        <li>
-                            <a href="Servlet?columna=fantasiaEpica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica<!--<span class="fa arrow"></span>--></a>
-                            </li>
-                        <li>
-                            <a href="Servlet?columna=romantica&opcion=leerListaLibro"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
-                        </li> 
-                   </ul>
-                  </div>
+                    </ul>
+                </div>
             </div>
-            <!-- /.navbar-static-side -->
         </nav>
 
         <div id="page-wrapper">
