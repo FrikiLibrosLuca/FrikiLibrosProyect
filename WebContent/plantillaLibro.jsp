@@ -259,14 +259,14 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Iniciar sesión</a>
+                        <li><a href="login.html"><i class="fa fa-user fa-fw"></i> Iniciar sesión</a>
                         </li>
                         <!--
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         -->
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+                        <li><a href="Servlet"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesion</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -279,7 +279,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
 
-                        <li class="sidebar-search" id="categoria"> Categorías
+                        <li class="sidebar-search" id="categoria"> Categorias
                             <!--
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -294,10 +294,10 @@
 
 
                         <li>
-                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Fantasía</a>
+                            <a href="index.html"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Romántica<!--<span class="fa arrow"></span>--></a>
+                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Thriller<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -311,13 +311,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Infantil</a>
+                            <a href="tables.html"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Histórica</a>
+                            <a href="forms.html"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficci�n</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Policiaca<!--<span class="fa arrow"></span>--></a>
+                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Fantas�a �pica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -343,7 +343,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Terror<!--<span class="fa arrow"></span>--></a>
+                            <a href="#"><i class="fa fa-github-alt fa-fw"></i> Rom�ntica<!--<span class="fa arrow"></span>--></a>
                             <!--
                             <ul class="nav nav-second-level">
                                 <li>
@@ -403,7 +403,7 @@
                     </header>
                     <main>
                         <div class="panel panel-primary">
-                            <header class="panel-heading tituloLibro">Título del Libro </header>
+                            <header class="panel-heading tituloLibro">T�tulo del Libro </header>
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="row">
@@ -414,7 +414,7 @@
                                         </div>
                                         <!-- /.panel-heading -->
                                         <div class="col-lg-6 datosInfoLibro">
-                                            <p class="plantillasLibro">Título: <span>${libro.titulo}</span></p>
+                                            <p class="plantillasLibro">T�tulo: <span>${libro.titulo}</span></p>
                                             <p class="plantillasLibro">ISBN: <span>${libro.isbn}</span></p>
                                             <p class="plantillasLibro">Autor: <span>${libro.autor.name}</span></p>
                                             <p class="plantillasLibro">Saga: <span>${libro.saga}</span></p>
