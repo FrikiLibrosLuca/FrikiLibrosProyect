@@ -17,44 +17,45 @@ public class GestorLibros {
 
 		Libro lib;
 		List<Libro> listadoLibros;
-		String plantilla;
 
-		int codError = 0;
+		int codError;
 
 		switch (opcion) {
 		case "buscarLibro":
 			String isbn = rq.getParameter("isbn");
 			lib = serv.buscarLibro(isbn);
 			rq.setAttribute("libro", lib);
-
+			rq.setAttribute("plantilla", "plantillaLibro.jsp");
 			break;
 		case "insertarLibro":
 			codError = serv.insertarModificar(rq);
+			//rq=popUp(codError,rq);
 			break;
 		case "eliminarLibro":
 			String isbn1 = rq.getParameter("isbn");
 			codError = serv.borrarLibro(isbn1);
+			//rq=popUp(codError,rq);
 			break;
 		
 		case "listadoGeneral":
 			listadoLibros = serv.leerListaLibro();
 			rq.setAttribute("listadoLibros", listadoLibros);
 			rq.setAttribute("plantilla", "listaLibros.jsp");
+			
 			break;
 		
-		case "leerListaLibro":
-			String columna = rq.getParameter("columna");
+		case "listadoCategoria":
 			int valorI;
 			String valorS;
 			
-				if (this.isNumeric(rq.getParameter("valor"))) {
-					valorI = Integer.parseInt(rq.getParameter("valor"));
-					listadoLibros = serv.leerListaLibro(columna, valorI);
+				if (isNumeric(rq.getParameter("columna"))) {
+					valorI = Integer.parseInt(rq.getParameter("columna"));
+					listadoLibros = serv.leerListaLibro("categoria", valorI);
 					rq.setAttribute("listadoLibros", listadoLibros);
 					rq.setAttribute("plantilla", "listaLibros.jsp");
 				} else {
-					valorS = rq.getParameter("valor");
-					listadoLibros = serv.leerListaLibro(columna, valorS);
+					valorS = rq.getParameter("columna");
+					listadoLibros = serv.leerListaLibro("categoria", valorS);
 					rq.setAttribute("listadoLibros", listadoLibros);
 					rq.setAttribute("plantilla", "listaLibros.jsp");
 				}
