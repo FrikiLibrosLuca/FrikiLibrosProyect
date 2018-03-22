@@ -19,12 +19,12 @@
                                     </div>
 
                                     <div class="col-lg-6 datosInfoLibro">
-                                        <p class="plantillasLibro">TÃ­tulo: <span>${libro.titulo}</span></p>
+                                        <p class="plantillasLibro">Título: <span>${libro.titulo}</span></p>
                                         <p class="plantillasLibro">ISBN: <span>${libro.isbn}</span></p>
                                         <p class="plantillasLibro">Autor: <span>${libro.autor.name}</span></p>
                                         <p class="plantillasLibro">Saga: <span>${libro.saga}</span></p>
-                                        <p class="plantillasLibro">Fecha de publicaciÃ³n: <span>${libro.fechaEdicion}</span></p>
-                                        <p class="plantillasLibro">CategorÃ­a: <span>${libro.categoria}</span></p>
+                                        <p class="plantillasLibro">Fecha de publicación: <span>${libro.fechaEdicion}</span></p>
+                                        <p class="plantillasLibro">Categoría: <span>${libro.categoria}</span></p>
                                         <p class="plantillasLibro">Idioma: <span>${libro.idioma}</span></p>
 
                                     </div>

@@ -9,7 +9,7 @@
                 </header>
                 <main>
                     <div class="panel panel-default">
-                        <header class="panel-heading tituloLibro">TÃ­tulo del Libro </header>
+                        <header class="panel-heading tituloLibro">Título del Libro </header>
                         <div class="row">
                             <div class="col-lg-10">
                                 <div class="row">
@@ -20,12 +20,12 @@
                                     </div>
 
                                     <div class="col-lg-6">
-                                        <p class="plantillasLibro">TÃ­tulo: <span></span></p>
+                                        <p class="plantillasLibro">Título: <span></span></p>
                                         <p class="plantillasLibro">ISBN: <span></span></p>
                                         <p class="plantillasLibro">Autor: <span></span></p>
                                         <p class="plantillasLibro">Saga: <span></span></p>
-                                        <p class="plantillasLibro">Fecha de publicaciÃ³n: <span></span></p>
-                                        <p class="plantillasLibro">CategorÃ­a: <span></span></p>
+                                        <p class="plantillasLibro">Fecha de publicación: <span></span></p>
+                                        <p class="plantillasLibro">Categoría: <span></span></p>
                                         <p class="plantillasLibro">Idioma: <span></span></p>
                                         <p align="right">
                                             <button type="button" class="btn btn-danger" class="botonEliminar">Eliminar</button>

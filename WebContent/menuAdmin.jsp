@@ -120,7 +120,7 @@
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> Administrador</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar SesiÃ³n</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
                         </li>
                     </ul>
 
@@ -140,7 +140,7 @@
                             <a href="Servlet?opcion=listadoGeneral"> Listado General </a>
                         </li>
 
-                        <li class="sidebar-search" id="categoria"> CategorÃ­as
+                        <li class="sidebar-search" id="categoria"> Categorías
                         </li>
 
                         <li>
@@ -154,10 +154,10 @@
                             <a href="Servlet?columna=dragones&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=cienciaFiccion&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Ciencia FicciÃ³n</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> FantasÃ­a Ã‰pica</a>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategorias"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
 
 
                     </ul>

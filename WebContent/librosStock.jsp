@@ -8,7 +8,7 @@
                 </header>
 
                 <div class="panel panel-default">
-                    <header class="panel-heading tituloLibro">TÃ­tulo del Libro </header>
+                    <header class="panel-heading tituloLibro">Título del Libro </header>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-default">

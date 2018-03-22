@@ -22,11 +22,11 @@
 
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="modificarTitulo">T√≠tulo</label>
+                                                        <label for="modificarTitulo">TÌtulo</label>
                                                         <input class="form-control" name="titulo" id="modificarTitulo" value="${libro.titulo}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label form="modificarFechaEdicion">Fecha de Edici√≥n</label>
+                                                        <label form="modificarFechaEdicion">Fecha de EdiciÛn</label>
                                                         <input type="date" class="form-control" id="fechaEdicionModificar" name="fecha" value="${libro.fecha}">
                                                     </div>
                                                     <div class="form-group">
@@ -42,14 +42,14 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="modificarCategoria">Categor√≠a</label>
+                                                        <label for="modificarCategoria">CategorÌa</label>
                                                         <select class="form-control">
                                                             <option name="categoria" value="terror">Terror</option>
                                                             <option name="categoria" value="thriller">Thriller</option>
                                                             <option name="categoria" value="dragones">Dragones</option>
-                                                            <option name="categoria" value="cienciaFiccion">Ciencia Ficci√≥n</option>
-                                                            <option name="categoria" value="fantasiaEpica">Fantas√≠a √âpica</option>
-                                                            <option name="categoria" value="romantica">Rom√°ntica</option>
+                                                            <option name="categoria" value="cienciaFiccion">Ciencia FicciÛn</option>
+                                                            <option name="categoria" value="fantasiaEpica">FantasÌa √âpica</option>
+                                                            <option name="categoria" value="romantica">Rom·ntica</option>
                                                         </select>
                                                     </div>
                                                     <button type="submit" class="btn btn-default">Submit Button</button>

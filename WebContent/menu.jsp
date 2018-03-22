@@ -60,11 +60,11 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="login.html"><i class="fa fa-user fa-fw"></i> Iniciar sesiÃ³n</a>
+                        <li><a href="login.html"><i class="fa fa-user fa-fw"></i> Iniciar sesión</a>
                         </li>
 
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar SesiÃ³n</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
                         </li>
                     </ul>
 
@@ -79,7 +79,7 @@
                         <li class="sidebar-search">
                             <a href="Servlet?opcion=listadoGeneral"> Listado General</a>
                         </li>
-                        <li class="sidebar-search" id="categoria"> CategorÃ­as
+                        <li class="sidebar-search" id="categoria"> Categorías
                         </li>
                         <li>
                             <a href="Servlet?columna=terror&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
@@ -91,13 +91,13 @@
                             <a href="Servlet?columna=dragones&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=cienciaFiccion&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia FicciÃ³n</a>
+                            <a href="Servlet?columna=cienciaFiccion&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> FantasÃ­a Ã‰pica</a>
+                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=romantica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> RomÃ¡ntica</a>
+                            <a href="Servlet?columna=romantica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Romántica</a>
                         </li>
 
                     </ul>
