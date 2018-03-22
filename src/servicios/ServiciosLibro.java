@@ -130,7 +130,7 @@ public class ServiciosLibro implements IServiciosLibro{
 	 */
 	
 	public List<Libro> leerListaLibro(String columna, String valor){
-		
+		logger.trace("-- trace servicio --> "+valor);
 		List<Libro> listadoLibros= new ArrayList<>();
 		ResultSet rs = bbdd.leerListaLibro(columna, valor);
 				
