@@ -12,7 +12,22 @@ import datos.ConectorLibros;
 import model.Autor;
 import model.Libro;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ServiciosLibro {
+	
+	private static Logger logger;
+
+    static {
+        try {
+            logger = LogManager.getLogger(ServiciosLibro.class);
+        } catch (Throwable e) {
+            System.out.println("Don't work");
+        }
+    }
+	
+	private static char [] tildes = {225,233,237,243,250,193,201,205,211,218,241,209}; 
 	
 	ConectorLibros bbdd= new ConectorLibros();
 	
@@ -176,6 +191,57 @@ public class ServiciosLibro {
 		
 		return resultado;
 	}
+	
+	 /* metodo que recibe un titulo, lo gestiona y llama al conector para saber si existe en la bbdd
+	 * @param String titulo
+	 * @return Libro
+	 */
+	public Libro buscarPorTitulo(String titulo){
+		ResultSet rs= null;
+		//lamada al conector que retorne los libros que coincidan
+		
+		rs=bbdd.leerListaLibro("titulo",titulo);
+		
+		Libro lib = new Libro();
+		lib=obtenerLibro(rs);
+		
+		return lib;
+		
+	}
+	
+	
+	public List<Libro> buscaPorAutor(String autor){
+		
+		List<Libro> listadoLibros= new ArrayList<>();
+		ResultSet rs = bbdd.leerListaLibro("autor",autor);
+	
+		try {
+			while(rs.next()){
+				listadoLibros.add(obtenerLibro(rs));
+				
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return listadoLibros;
+	}
+	
+	
+	
+	/*sustituye letas con tilde por ?
+	public static void replaceAll(String dato){
+		StringBuilder builder = new StringBuilder(dato);
+			
+		for(int i=0;i<tildes.length;i++){
+			for (int j =0 ;j<builder.length();j++){
+				if(builder.charAt(j)==tildes[i])
+				builder.replace(j, j, "?");
+			}
+		}
+		
+	}*/
 
 	
 }
