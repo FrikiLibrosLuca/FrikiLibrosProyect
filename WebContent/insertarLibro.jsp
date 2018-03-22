@@ -22,7 +22,7 @@
                                                         <input class="form-control" name="ISBN" id="isbnLibro" value="000">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="modificarTitulo">TÃ­tulo</label>
+                                                        <label for="modificarTitulo">Título</label>
                                                         <input class="form-control" name="titulo" id="modificarTitulo" placeholder="Pezcadilla">
                                                     </div>
                                                     <div class="form-group">
