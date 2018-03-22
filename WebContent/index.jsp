@@ -21,7 +21,7 @@
 	            	<figure>
 		                <img src="imagenes/303.jpg"/>
 		                <figcaption>
-		                   Fundación
+		                   Fundación 
 		                </figcaption>
 	             	</figure>
              	</a>
