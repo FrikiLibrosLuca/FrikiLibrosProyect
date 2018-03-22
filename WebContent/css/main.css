@@ -46,5 +46,11 @@ section.elementoLibro figure figcaption{
 	aling: right; 
 	text-decoration: strong;
 }
+
+.botonLupita{
+	display: inline-block;
+	clear: both;
+	float: right;
+}
 	
 }
