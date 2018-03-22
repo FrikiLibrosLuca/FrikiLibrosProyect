@@ -24,11 +24,18 @@ public class Servlet extends HttpServlet {
 	protected void processRequestHandler(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 		RequestDispatcher view;
-		 
 		
-		
-		
-		//HttpSession session = request.getSession(); 
+		if(request.getParameter("opcion").equals("loggin")){
+			if(request.getParameter("nombreUsuario").equals("admin") && request.getParameter("contrasena").equals("1234")){
+				HttpSession session = request.getSession();
+				session.setAttribute("usuarioProyecto", "Admin");
+				request.setAttribute("privilegio", true);
+			} else {
+				view = request.getRequestDispatcher("plantillaError");
+				view.forward(request, response);
+			}		
+		}
+				
 		
 		request=gestor.gestion(request,response);
 		
