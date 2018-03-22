@@ -19,6 +19,7 @@ public class GestorLibros {
 		List<Libro> listadoLibros;
 
 		int codError;
+		String valor;
 
 		switch (opcion) {
 		case "buscarLibro":
@@ -46,10 +47,23 @@ public class GestorLibros {
 		
 		case "listadoCategoria":
 			String columna = rq.getParameter("columna");
-			String valor = rq.getParameter("valor");
+			valor = rq.getParameter("valor");
 			listadoLibros = serv.leerListaLibro(columna, valor);
 			rq.setAttribute("listadoLibros", listadoLibros);
 			rq.setAttribute("plantilla", "listaLibros.jsp");
+			
+			break;
+			
+		case "busqueda":
+			valor = rq.getParameter("valor");
+			if(rq.getParameter("campo").equals("autor")){
+				listadoLibros = serv.buscarPorAutor(valor);
+			} else {
+				listadoLibros = serv.buscarPorTitulo(valor);
+			}
+			
+			rq.setAttribute("listadoLibros", listadoLibros);
+			rq.setAttribute("plantilla", "listadoLibros.jsp");
 			
 			break;
 		}
