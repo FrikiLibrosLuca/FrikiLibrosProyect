@@ -15,7 +15,7 @@ import model.Libro;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ServiciosLibro {
+public class ServiciosLibro implements IServiciosLibro{
 	
 	private static Logger logger;
 
