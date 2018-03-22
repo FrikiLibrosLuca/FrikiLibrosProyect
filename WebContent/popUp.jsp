@@ -26,6 +26,12 @@
 				</div>				
 			</c:if>			
 		</div>
+		<div class="col-lg-12">
+			<a href="Servlet?opcion=listadoGeneral">
+				<button type="submit" class="btn btn-info btn-circle btn-lg"><i class="fa fa-check"></i>
+	            </button>
+            </a>
+		</div>
 	</div>
 </div>
 
