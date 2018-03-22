@@ -16,8 +16,8 @@ public interface IServiciosLibro {
 	
 	int borrarLibro(String isbn);
 	
-	Libro buscarPorTitulo(String titulo);
+	List<Libro> buscarPorTitulo(String titulo);
 	
-	List<Libro> buscaPorAutor(String autor);
+	List<Libro> buscarPorAutor(String autor);
 	
 }

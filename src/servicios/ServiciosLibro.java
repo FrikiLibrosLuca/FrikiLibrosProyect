@@ -196,21 +196,26 @@ public class ServiciosLibro implements IServiciosLibro{
 	 * @param String titulo
 	 * @return Libro
 	 */
-	public Libro buscarPorTitulo(String titulo){
-		ResultSet rs= null;
-		//lamada al conector que retorne los libros que coincidan
+	public List<Libro> buscarPorTitulo(String titulo){
+		List<Libro> listadoLibros= new ArrayList<>();
+		ResultSet rs = bbdd.leerListaLibro("titulo",titulo);
+	
+		try {
+			while(rs.next()){
+				listadoLibros.add(obtenerLibro(rs));
+				
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
-		rs=bbdd.leerListaLibro("titulo",titulo);
-		
-		Libro lib = new Libro();
-		lib=obtenerLibro(rs);
-		
-		return lib;
+		return listadoLibros;
 		
 	}
 	
 	
-	public List<Libro> buscaPorAutor(String autor){
+	public List<Libro> buscarPorAutor(String autor){
 		
 		List<Libro> listadoLibros= new ArrayList<>();
 		ResultSet rs = bbdd.leerListaLibro("autor",autor);
@@ -227,6 +232,7 @@ public class ServiciosLibro implements IServiciosLibro{
 		
 		return listadoLibros;
 	}
+
 	
 	
 	
