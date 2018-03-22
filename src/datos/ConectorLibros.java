@@ -91,6 +91,7 @@ public class ConectorLibros {
 		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
 				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + filtro
 				+ "' and a.id=l.id_autor;";
+		logger.debug("-------dentro de leerelemento "+query);
 
 		try {
 			this.st = con.createStatement();
@@ -106,7 +107,7 @@ public class ConectorLibros {
 	}
 
 	public int insertLibro(Libro lib, int idAutor) {
-		String query = "INSERT INTO libro VALUES ('" + lib.getISBN() + "', '" + lib.getTitulo() + "', '" + lib.getSaga()
+		String query = "INSERT INTO libro VALUES ('" + lib.getIsbn() + "', '" + lib.getTitulo() + "', '" + lib.getSaga()
 				+ "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '"
 				+ lib.getCategoria() + "', '" + idAutor + "';";
 
@@ -126,7 +127,7 @@ public class ConectorLibros {
 		String query = "UPDATE libros SET titulo='" + lib.getTitulo() + "', saga='" + lib.getSaga()
 				+ "', fecha_edicion= STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d), idioma='"
 				+ lib.getIdioma() + "', categoria='" + lib.getCategoria() + "', id_autor='" + idAutor + "' WHERE isbn='"
-				+ lib.getISBN() + "';";
+				+ lib.getIsbn() + "';";
 		int registrosAfectados = -1;
 		try {
 			this.st = con.createStatement();

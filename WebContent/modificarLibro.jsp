@@ -37,7 +37,7 @@
                                                         <label for="modificarAutor">Autor</label>
                                                         <select class="form-control">
                                                             <c:forEach var="autor" items="${listaAutor}">
-                                                                <option name="autor" value="${autor}">${autor.name}</option>
+                                                                <option name="autor" value="${autor}">${autor.nombreAutor}</option>
                                                             </c:forEach>
                                                         </select>
                                                     </div>

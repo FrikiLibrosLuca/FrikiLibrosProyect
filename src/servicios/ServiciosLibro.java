@@ -44,7 +44,7 @@ public class ServiciosLibro implements IServiciosLibro{
 	
 		try {
 			
-				lib.setISBN(rs.getString("isbn"));
+				lib.setIsbn(rs.getString("isbn"));
 				lib.setTitulo(rs.getString("titulo"));
 				lib.setSaga(rs.getString("saga"));
 				lib.setFechaEdicion(rs.getString("fecha_edicion"));
@@ -58,6 +58,7 @@ public class ServiciosLibro implements IServiciosLibro{
 			e.printStackTrace();
 		}
 		lib.setAutor(au);
+		logger.debug("------- libro dentro de conector "+lib.toString());
 		
 		
 		return lib;
@@ -70,11 +71,11 @@ public class ServiciosLibro implements IServiciosLibro{
 	 * 
 	 */
 	public Libro buscarLibro(String isbn){
-		
+		logger.debug("---------isbn de entrada a buscar libro "+isbn);
 		ResultSet rs = bbdd.leerElemento("libros","isbn",isbn);
 		
 		Libro lib = obtenerLibro(rs);
-		
+		logger.debug("----servicio buscar libro "+lib.toString());
 		return lib;
 	}
 	
@@ -164,7 +165,7 @@ public class ServiciosLibro implements IServiciosLibro{
 		lib.setIdioma(request.getParameter("idioma"));
 		lib.setSaga(request.getParameter("saga"));
 		lib.setFoto(request.getParameter("foto"));
-		lib.setISBN(request.getParameter("ISBN"));
+		lib.setIsbn(request.getParameter("ISBN"));
 		lib.setFechaEdicion(request.getParameter("fecha"));
 		id_autor=Integer.parseInt(request.getParameter("idAutor"));
 		
