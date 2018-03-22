@@ -35,21 +35,21 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="modificarAutor">Autor</label>
-                                                        <select class="form-control">
+                                                        <select class="form-control" name="autor">
                                                             <c:forEach var="autor" items="${listaAutor}">
-                                                                <option name="autor" value="${autor}">${autor.name}</option>
+                                                                <option value="${autor}">${autor.name}</option>
                                                             </c:forEach>
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="modificarCategoria">Categoría</label>
-                                                        <select class="form-control">
-                                                            <option name="categoria" value="terror">Terror</option>
-                                                            <option name="categoria" value="thriller">Thriller</option>
-                                                            <option name="categoria" value="dragones">Dragones</option>
-                                                            <option name="categoria" value="cienciaFiccion">Ciencia Ficción</option>
-                                                            <option name="categoria" value="fantasiaEpica">Fantasía É‰pica</option>
-                                                            <option name="categoria" value="romantica">Romántica</option>
+                                                        <select class="form-control" name="categoria">
+                                                            <option value="terror">Terror</option>
+                                                            <option value="thriller">Thriller</option>
+                                                            <option value="dragones">Dragones</option>
+                                                            <option value="cienciaFiccion">Ciencia Ficción</option>
+                                                            <option value="fantasiaEpica">Fantasía É‰pica</option>
+                                                            <option value="romantica">Romántica</option>
                                                         </select>
                                                     </div>
                                                     <button type="submit" class="btn btn-default">Insertar</button>

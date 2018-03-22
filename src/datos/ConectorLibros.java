@@ -7,13 +7,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import model.Libro;
+import servicios.ServiciosLibro;
 
 public class ConectorLibros {
 
 	private Connection con = null;
 	private Statement st = null;
 	private ResultSet rs = null;
+	
+	private static Logger logger;
+
+    static {
+        try {
+            logger = LogManager.getLogger(ConectorLibros.class);
+        } catch (Throwable e) {
+            System.out.println("Don't work");
+        }
+    }
 
 	public ConectorLibros() {
 		abrirConnect();
@@ -154,9 +168,9 @@ public class ConectorLibros {
 	}
 
 	public ResultSet leerListaLibro(String columna, String valor) {
-		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
-				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + valor
-				+ "' and a.id=l.id_autor;";
+		logger.trace("-- trace conector --> "+valor);
+		String query ="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
+				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "='" + valor + "' and a.id=l.id_autor and l.isbn=i.isbn;"; 
 
 		try {
 			this.st = con.createStatement();
@@ -171,9 +185,9 @@ public class ConectorLibros {
 	}
 
 	public ResultSet leerListaLibro(String columna, int valor) {
-		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
-				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "=" + valor + " and a.id=l.id_autor;";
-
+		String query ="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
+				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "=" + valor + " and a.id=l.id_autor and l.isbn=i.isbn;"; 
+				
 		try {
 			this.st = con.createStatement();
 			this.rs = st.executeQuery(query);

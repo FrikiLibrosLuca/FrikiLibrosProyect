@@ -91,13 +91,13 @@
                             <a href="Servlet?columna=Dragones&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=Ciencia Ficción&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
+                            <a href="Servlet?columna=Ciencia Ficci&Oacute;n&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=Fantasía Épica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
+                            <a href="Servlet?columna=Fantas&iacute;a &Eacute;pica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=Romántica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Romántica</a>
+                            <a href="Servlet?columna=Rom&aacute;ntica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Romántica</a>
                         </li>
 
                     </ul>
