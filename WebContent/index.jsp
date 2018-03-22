@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file ="menu.jsp" %>
 
 
@@ -26,7 +28,7 @@
 		                <img src="imagenes/303.jpg"/>
 		            </a>    
 		                <figcaption>
-		                   Fundación 
+		                   FundaciÃ³n 
 		                </figcaption>
 	             	</figure>
              	

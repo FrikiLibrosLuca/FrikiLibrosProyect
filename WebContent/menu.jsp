@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="e">
 
@@ -60,11 +63,11 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="login.html"><i class="fa fa-user fa-fw"></i> Iniciar sesi髇</a>
+                        <li><a href="login.html"><i class="fa fa-user fa-fw"></i> Iniciar sesi贸n</a>
                         </li>
 
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesi髇</a>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesi贸n</a>
                         </li>
                     </ul>
 
@@ -79,7 +82,7 @@
                         <li class="sidebar-search">
                             <a href="Servlet?opcion=listadoGeneral"> Listado General</a>
                         </li>
-                        <li class="sidebar-search" id="categoria"> Categor韆s
+                        <li class="sidebar-search" id="categoria"> Categor铆as
                         </li>
                         <li>
                             <a href="Servlet?columna=Terror&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
@@ -91,13 +94,13 @@
                             <a href="Servlet?columna=Dragones&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=Ciencia Ficci&Oacute;n&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficci髇</a>
+                            <a href="Servlet?columna=Ciencia Ficci贸n&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficci贸n</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=Fantas&iacute;a &Eacute;pica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantas韆 蓀ica</a>
+                            <a href="Servlet?columna=Fantas&iacute;a &Eacute;pica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantas铆a 脡pica</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=Rom&aacute;ntica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Rom醤tica</a>
+                            <a href="Servlet?columna=Rom&aacute;ntica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Rom谩ntica</a>
                         </li>
 
                     </ul>
