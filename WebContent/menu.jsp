@@ -79,6 +79,29 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                    <!-- Lupita buscador -->	
+						<li class="sidebar-search ">
+				            <form action="Servlet" method="GET">
+				            <div class="input-group custom-search-form">
+				           		<div class="form-group">
+	                                <label>Buscar por:</label>
+	                                <select class="form-control" name="campo">
+	                                    <option value="autor">Autor</option>
+	                                    <option value="titulo">Titulo</option>
+	                                </select>
+	                            </div>
+	                            <div>
+				                <input type="text" name="valor" class="form-control" placeholder="Buscar...">
+				                   <span class="input-group-btn">
+				                   <button class="botonLupita btn btn-default" type="submit" name="opcion">
+				                   <i class="fa fa-search"></i>
+				                   </button>
+				                   </span>
+				                </div>
+				                <input type="hidden" name="opcion" value="busqueda">
+				             </div>
+				             </form>
+				         </li>
                         <li class="sidebar-search">
                             <a href="Servlet?opcion=listadoGeneral"> Listado General</a>
                         </li>
