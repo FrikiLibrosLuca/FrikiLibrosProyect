@@ -105,22 +105,22 @@
                         <li class="sidebar-search" id="categoria"> Categorías
                         </li>
                         <li>
-                            <a href="Servlet?columna=terror&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
+                            <a href="Servlet?columna=Terror&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Terror</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=thriller&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Thriller</a>
+                            <a href="Servlet?columna=Thriller&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Thriller</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=dragones&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
+                            <a href="Servlet?columna=Dragones&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Dragones</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=cienciaFiccion&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
+                            <a href="Servlet?columna=Ciencia Ficci&Oacute;n&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Ciencia Ficción</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=fantasiaEpica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
+                            <a href="Servlet?columna=Fantas&iacute;a &Eacute;pica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Fantasía Épica</a>
                         </li>
                         <li>
-                            <a href="Servlet?columna=romantica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Romántica</a>
+                            <a href="Servlet?columna=Rom&aacute;ntica&opcion=listadoCategoria"><i class="fa fa-github-alt fa-fw"></i> Romántica</a>
                         </li>
 
                     </ul>

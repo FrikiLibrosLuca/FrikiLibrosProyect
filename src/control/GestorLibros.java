@@ -4,12 +4,26 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import model.Libro;
 import servicios.ServiciosLibro;
 
 public class GestorLibros {
 
 	static ServiciosLibro serv = new ServiciosLibro();
+	
+	private static Logger logger;
+
+    static {
+        try {
+            logger = LogManager.getLogger(GestorLibros.class);
+        } catch (Throwable e) {
+            System.out.println("Don't work");
+        }
+    }
 
 	public HttpServletRequest gestion(HttpServletRequest rq, HttpServletResponse rp) {
 
@@ -46,9 +60,9 @@ public class GestorLibros {
 			break;
 		
 		case "listadoCategoria":
-			String columna = rq.getParameter("columna");
-			valor = rq.getParameter("valor");
-			listadoLibros = serv.leerListaLibro(columna, valor);
+			valor = rq.getParameter("columna");
+			logger.trace("-- trace gestor--> "+valor);
+			listadoLibros = serv.leerListaLibro("categoria", valor);
 			rq.setAttribute("listadoLibros", listadoLibros);
 			rq.setAttribute("plantilla", "listaLibros.jsp");
 			
@@ -85,11 +99,14 @@ public class GestorLibros {
 	
 	private HttpServletRequest popUp(int codError, HttpServletRequest rq){
 		if (codError == -1) {
-			rq.setAttribute("resultado", "Ha habido un error a la hora de modificar o insertar o eliminar");
-			rq.setAttribute("plantilla", "popup.html");
+			rq.setAttribute("mensaje", "Ha habido un error a la hora de modificar o insertar o eliminar");
+			rq.setAttribute("plantilla", "popUp.jsp");
+			rq.setAttribute("resultado", true);
+			
 		} else if (codError >= 0) {
-			rq.setAttribute("resultado", "Insertado o modificado o eliminar correctamente");
-			rq.setAttribute("plantilla", "popup.html");
+			rq.setAttribute("mensaje", "Insertado o modificado o eliminar correctamente");
+			rq.setAttribute("plantilla", "popUp.jsp");
+			rq.setAttribute("resultado", false);
 		}
 		return rq;
 	}
