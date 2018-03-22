@@ -68,7 +68,7 @@
                                             <span class="fa arrow"></span> 
                                        </a>
                                         <ul class="nav nav-second-level">
-                                            <div>
+                                            
                                                 <li>
                                                     <a href="Servler">Insertar Libro</a>
                                                 </li>
@@ -81,25 +81,25 @@
                                                 <li>
                                                     <a href="Servler">Mostrar Libro</a>
                                                 </li>
-                                            </div>
+                                            
                                         </ul>
 
                                     </li>
                                     <li class="divider"></li>
                                     <li>
                                         <a href="#">
-                                            <div>
+                                            
                                                 <i class="fa fa-tasks fa-fw"></i> Editar Usuarios
-                                            </div>
+                                            
                                         </a>
                                     </li>
                                     <li class="divider"></li>
                                     <!---ESTO NO SE QUE ES-->
                                     <li>
                                         <a href="#">
-                                            <div>
+                                           
                                                 <i class="fa fa-tasks fa-fw"></i> Editar Provedores
-                                            </div>
+                                            
                                         </a>
                                     </li>
                                     <!-------------------------------------------------------->
