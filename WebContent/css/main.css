@@ -41,3 +41,10 @@ section.elementoLibro figure figcaption{
 #figureInfoLibro {
     margin-left: 25%;
 }
+
+.botonEliminar{
+	aling: right; 
+	text-decoration: strong;
+}
+	
+}

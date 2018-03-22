@@ -1,4 +1,4 @@
-<%@ include file ="menuAdmin.jsp" %>
+
 
             <!-- MENU SUPERIOR ------------------------------------------------------------------------------------------------------------- -->
             <ul class="nav navbar-top-links navbar-right">
