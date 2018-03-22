@@ -45,20 +45,11 @@ public class GestorLibros {
 			break;
 		
 		case "listadoCategoria":
-			int valorI;
-			String valorS;
-			
-				if (isNumeric(rq.getParameter("columna"))) {
-					valorI = Integer.parseInt(rq.getParameter("columna"));
-					listadoLibros = serv.leerListaLibro("categoria", valorI);
-					rq.setAttribute("listadoLibros", listadoLibros);
-					rq.setAttribute("plantilla", "listaLibros.jsp");
-				} else {
-					valorS = rq.getParameter("columna");
-					listadoLibros = serv.leerListaLibro("categoria", valorS);
-					rq.setAttribute("listadoLibros", listadoLibros);
-					rq.setAttribute("plantilla", "listaLibros.jsp");
-				}
+			String columna = rq.getParameter("columna");
+			String valor = rq.getParameter("valor");
+			listadoLibros = serv.leerListaLibro(columna, valor);
+			rq.setAttribute("listadoLibros", listadoLibros);
+			rq.setAttribute("plantilla", "listaLibros.jsp");
 			
 			break;
 		}
