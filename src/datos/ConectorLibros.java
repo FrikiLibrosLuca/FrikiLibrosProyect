@@ -35,9 +35,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 	}
 
 	public void cerrarConnect() {
@@ -68,9 +66,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 		return rs;
 	}
 
@@ -90,9 +86,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 		return rs;
 
 	}
@@ -110,9 +104,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 		return registrosAfectados;
 	}
 
@@ -129,9 +121,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 		return registrosAfectados;
 	}
 
@@ -145,9 +135,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 		return registrosAfectados;
 	}
 
@@ -161,9 +149,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 		return rs;
 	}
 
@@ -180,8 +166,6 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
 		}
 		return rs;
 	}
@@ -198,9 +182,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
-		}
+		} 
 		return rs;
 	}
 
@@ -216,8 +198,6 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} finally {
-			cerrarConnect();
 		}
 		return rs;
 	}
