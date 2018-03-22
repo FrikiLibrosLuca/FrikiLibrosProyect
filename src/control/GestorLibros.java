@@ -28,7 +28,7 @@ public class GestorLibros {
 	public HttpServletRequest gestion(HttpServletRequest rq, HttpServletResponse rp) {
 
 		String opcion = rq.getParameter("opcion");
-
+		System.out.println("--------------------------------------------------"+opcion);
 		Libro lib;
 		List<Libro> listadoLibros;
 
@@ -69,7 +69,7 @@ public class GestorLibros {
 			
 			break;
 			
-		case "busqueda":
+		case "Enviar":
 			valor = rq.getParameter("valor");
 			if(rq.getParameter("campo").equals("autor")){
 				listadoLibros = serv.buscarPorAutor(valor);
@@ -78,8 +78,8 @@ public class GestorLibros {
 			}
 			
 			rq.setAttribute("listadoLibros", listadoLibros);
-			rq.setAttribute("plantilla", "listadoLibros.jsp");
-			
+			rq.setAttribute("plantilla", "listaLibros.jsp");
+			System.out.println("--------------------------------------------------"+rq.getAttribute("plantilla"));
 			break;
 		}
 

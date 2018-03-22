@@ -9,7 +9,10 @@
                 <c:forEach var="libro" items="${listadoLibros}">
                     <section class="col-lg-3 col-md-4 col-sm-6 elementoLibro">
                         <figure>
-                            <img src="${libro.foto}" />
+                        <c:url value="Servlet?opcion=buscarLibro&isbn=40" var="urrl"/>
+                        	<a href="${urrl}">
+                        		<img src='${libro.foto}' />
+                        	</a>
                             <figcaption>
                                 "${libro.titulo}"
                             </figcaption>

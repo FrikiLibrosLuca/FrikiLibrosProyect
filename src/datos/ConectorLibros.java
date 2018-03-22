@@ -2,6 +2,7 @@ package datos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,12 +11,14 @@ import java.time.LocalDate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
+
 import model.Libro;
 import servicios.ServiciosLibro;
 
 public class ConectorLibros {
 
-	private Connection con = null;
+	static Connection con = null;
 	private Statement st = null;
 	private ResultSet rs = null;
 	
@@ -84,28 +87,10 @@ public class ConectorLibros {
 		return rs;
 	}
 
-	public ResultSet leerElemento(String nameTable, String columna, String filtro) {
-		// String query = "SELECT * FROM " + nameTable + " WHERE " + columna +
-		// "=" + "filtro";
-
-		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
-				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + filtro
-				+ "' and a.id=l.id_autor;";
-		logger.debug("-------dentro de leerelemento "+query);
-
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} 
-		return rs;
-
-	}
-
+	
+	
+	
+	
 	public int insertLibro(Libro lib, int idAutor) {
 		String query = "INSERT INTO libro VALUES ('" + lib.getIsbn() + "', '" + lib.getTitulo() + "', '" + lib.getSaga()
 				+ "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '"
@@ -155,6 +140,8 @@ public class ConectorLibros {
 	}
 
 	public ResultSet leerLibro(String isbn) {
+		
+		
 		String query = "SELECT * FROM libros WHERE isbn='" + isbn + "';";
 		try {
 			this.st = con.createStatement();
@@ -216,5 +203,62 @@ public class ConectorLibros {
 		}
 		return rs;
 	}
-
+	
+	
+	public ResultSet buscarLibro(String isbn){
+		
+		
+		String query="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, i.ruta FROM libros as l, autor as a, imagenes as i where a.id=l.id_autor and "
+				+ "l.isbn=i.isbn and l.isbn='"+isbn+"';";
+		logger.debug("-------dentro de leerelemento "+query);
+		try {
+			this.st=con.createStatement();
+			this.rs=st.executeQuery(query);
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		
+		
+		return rs;
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

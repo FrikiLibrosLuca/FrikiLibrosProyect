@@ -6,7 +6,7 @@
                 <header>
                     <h1 class="page-header">FrikiLibros</h1>
                 </header>
-                <main>
+              
                     <div class="panel panel-primary">
                         <header class="panel-heading tituloLibro">Título del Libro </header>
                         <div class="row">
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-                </main>
+                
 
 
             </div>

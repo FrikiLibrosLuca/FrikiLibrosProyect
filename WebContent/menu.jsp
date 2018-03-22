@@ -81,7 +81,7 @@
                     <ul class="nav" id="side-menu">
                     <!-- Lupita buscador -->	
 						<li class="sidebar-search ">
-				            <form action="Servlet" method="GET">
+				            <form action="Servlet" method="get">
 				            <div class="input-group custom-search-form">
 				           		<div class="form-group">
 	                                <label>Buscar por:</label>
@@ -93,9 +93,9 @@
 	                            <div>
 				                <input type="text" name="valor" class="form-control" placeholder="Buscar...">
 				                   <span class="input-group-btn">
-				                   <button class="botonLupita btn btn-default" type="submit" name="opcion">
+				                   <input class="botonLupita btn btn-default" type="submit" name="opcion"/>
 				                   <i class="fa fa-search"></i>
-				                   </button>
+				                  
 				                   </span>
 				                </div>
 				                <input type="hidden" name="opcion" value="busqueda">

@@ -25,16 +25,23 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
 		RequestDispatcher view;
 		
+		
 		if(request.getParameter("opcion").equals("loggin")){
 			if(request.getParameter("nombreUsuario").equals("admin") && request.getParameter("contrasena").equals("1234")){
 				HttpSession session = request.getSession();
 				session.setAttribute("usuarioProyecto", "Admin");
 				request.setAttribute("privilegio", true);
-			} else {
-				view = request.getRequestDispatcher("plantillaError");
+				view = request.getRequestDispatcher("index.jsp");
 				view.forward(request, response);
+				
+			} else {
+				request.setAttribute("mensaje", "Credenciales incorrectas");
+				request.setAttribute("resultado", false);
+				view = request.getRequestDispatcher("popUp.jsp");
+				view.forward(request, response);
+				
 			}		
-		}
+		}else{
 				
 		
 		request=gestor.gestion(request,response);
@@ -46,7 +53,7 @@ public class Servlet extends HttpServlet {
 		
 		
 		
-				
+		}	
     }
             
 	 

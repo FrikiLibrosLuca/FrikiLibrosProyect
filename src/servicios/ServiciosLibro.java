@@ -43,7 +43,6 @@ public class ServiciosLibro implements IServiciosLibro{
 		Autor au= new Autor();
 	
 		try {
-			
 				lib.setIsbn(rs.getString("isbn"));
 				lib.setTitulo(rs.getString("titulo"));
 				lib.setSaga(rs.getString("saga"));
@@ -72,7 +71,7 @@ public class ServiciosLibro implements IServiciosLibro{
 	 */
 	public Libro buscarLibro(String isbn){
 		logger.debug("---------isbn de entrada a buscar libro "+isbn);
-		ResultSet rs = bbdd.leerElemento("libros","isbn",isbn);
+		ResultSet rs = bbdd.buscarLibro(isbn);
 		
 		Libro lib = obtenerLibro(rs);
 		logger.debug("----servicio buscar libro "+lib.toString());

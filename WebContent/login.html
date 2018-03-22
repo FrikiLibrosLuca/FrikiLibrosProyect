@@ -33,7 +33,7 @@
 </head>
 
 <body>
-<!----------------------------------------- (BORRAR )CREAR USUARIO EN STAND BY POR EL MOMENTO---------------------------------------------------------------------------------
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -42,7 +42,7 @@
                         <h3 class="panel-title">Introduce tu Usuario</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="Servlet" method="get">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Espinete" name="nombreUsuario" type="text" autofocus>
@@ -57,8 +57,9 @@
                                     <input type="hidden" name="opcion" value="loggin" >
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                              <!-- (BORRAR ABRIR COMENTARIOS IZQUIERDA ) <a href="Servlet" class="btn btn-lg btn-success btn-block">Entrar con una cuenta</a>
-                                 <a href="Servlet" class="btn btn-lg btn-success btn-block">Crear Usuario Nuevo</a>
+                                <input type="submit" value="Contectarme" class="btn btn-lg btn-success btn-block"/>
+                              
+                                 <!-- <a href="Servlet" class="btn btn-lg btn-success btn-block">Crear Usuario Nuevo</a>-->
                             </fieldset>
                         </form>
                     </div>
