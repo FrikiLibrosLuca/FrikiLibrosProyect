@@ -24,7 +24,7 @@
                                          <!--<ul class=" nav nav-second-level ">-->
                                             
                                     <li>
-                                        <a href="Servlet?opcion=buscarAutor">Insertar Libro</a>
+                                        <a href="insertarLibro.jsp">Insertar Libro</a>
                                     </li>
                                     <li>
                                         <a href="Servlet?opcion=listadoGeneral">Eliminar Libro</a>
