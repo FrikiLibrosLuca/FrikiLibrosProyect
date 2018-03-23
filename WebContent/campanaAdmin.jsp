@@ -25,7 +25,7 @@
                                     <div>
                                		<li class="divider"></li>
                                     <li>
-                                        <a href="insertarLibro.jsp">Insertar Libro</a>
+                                        <a href="Servlet?opcion=insertarLibro">Insertar Libro</a>
                                     </li>
                                     <li>
                                         <a href="Servlet?opcion=listadoGeneral">Eliminar Libro</a>
