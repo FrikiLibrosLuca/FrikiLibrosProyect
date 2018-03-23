@@ -166,8 +166,8 @@ public class ConectorLibros {
 
 	public ResultSet leerListaLibro(String columna, String valor) {
 		String query ="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
-				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "=" + valor + " and a.id=l.id_autor and l.isbn=i.isbn;"; 
-				
+				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "='" + valor + "' and a.id=l.id_autor and l.isbn=i.isbn;"; 
+			logger.debug("query--"+query);	
 		try {
 			this.st = con.createStatement();
 			this.rs = st.executeQuery(query);
