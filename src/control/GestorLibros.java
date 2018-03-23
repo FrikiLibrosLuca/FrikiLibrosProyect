@@ -41,7 +41,7 @@ public class GestorLibros {
 			lib = serv.buscarLibro(isbn);
 			rq.setAttribute("libro", lib);
 			rq.setAttribute("plantilla", "plantillaLibro.jsp");
-			logger.debug("--------"+lib.toString());
+			
 			break;
 		case "insertarLibro":
 			codError = serv.insertarModificar(rq);

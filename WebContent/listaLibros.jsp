@@ -5,12 +5,11 @@
             <div class="col-lg-12">
                 <h1 class="page-header">FrikiLibros</h1>
             </div>
-            <section>
+            <div>
                 <c:forEach var="libro" items="${listadoLibros}">
                     <section class="col-lg-3 col-md-4 col-sm-6 elementoLibro">
                         <figure>
-                        <c:url value="Servlet?opcion=buscarLibro&isbn=40" var="urrl"/>
-                        	<a href="${urrl}">
+                        <a href="<c:url value='Servlet?opcion=buscarLibro&isbn=${libro.isbn}'/>">
                         		<img src='${libro.foto}' />
                         	</a>
                             <figcaption>
@@ -19,7 +18,7 @@
                         </figure>
                     </section>
                 </c:forEach>
-            </section>
+            </div>
 
         </div>
     </div>
