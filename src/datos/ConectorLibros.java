@@ -156,10 +156,10 @@ public class ConectorLibros {
 			this.st = con.createStatement();
 			this.rs = st.executeQuery(query);
 
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
+		} catch (SQLException sqe) {
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
 		}
 		return rs;
 	}
@@ -172,15 +172,15 @@ public class ConectorLibros {
 			this.st = con.createStatement();
 			this.rs = st.executeQuery(query);
 
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
+		} catch (SQLException sqe) {
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
 		} 
 		return rs;
 	}
 
-	public int insertLibro(Libro lib, int id_autor) {
+	/*public int insertLibro(Libro lib, int id_autor) {
 		String query = "INSERT INTO libro VALUES ('" + lib.getIsbn() + "', '" + lib.getTitulo() + "', '" + lib.getSaga()
 				+ "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '"
 				+ lib.getCategoria() + "', '" + id_autor + "';";
@@ -197,7 +197,36 @@ public class ConectorLibros {
 		return registrosAfectados;
 
 		
+	}*/
+	
+	public int insertLibro(Libro lib, int id_autor){
+		String query = "INSERT INTO libro VALUES ('" + lib.getIsbn() + "', '" + lib.getTitulo() + "', '" + lib.getSaga()
+		+ "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '"
+		+ lib.getCategoria() + "', '" + id_autor + "';";
+		
+		try{
+			con.setAutoCommit(false);
+	         st = con.createStatement();
+	         st.addBatch(query);
+	         st.addBatch("insert into imagenes values('"+lib.getIsbn()+"','imagenes/200.jpg');");
+	         
+	        st.executeBatch();
+	         
+	         
+	         con.commit();
+		}catch(SQLException sqe){
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
+		}
+		
+		
+         
+         return 0;
 	}
+	
+	
+	
 
 	public int modificarLibro(Libro lib, int id_autor) {
 		String query = "UPDATE libros SET titulo='" + lib.getTitulo() + "', saga='" + lib.getSaga()
@@ -208,10 +237,10 @@ public class ConectorLibros {
 		try {
 			this.st = con.createStatement();
 			registrosAfectados = st.executeUpdate(query);
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
+		} catch (SQLException sqe) {
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
 		}
 		return registrosAfectados;
 		
@@ -223,12 +252,27 @@ public class ConectorLibros {
 		try {
 			this.st = con.createStatement();
 			registrosAfectados = st.executeUpdate(query);
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
+		} catch (SQLException sqe) {
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
 		} 
 		return registrosAfectados;
+	}
+	
+	public ResultSet leerListaAutor(){
+		String query="select * from autor";
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+
+		} catch (SQLException sqe) {
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
+		} 
+		return rs;
+		
 	}
 
 }

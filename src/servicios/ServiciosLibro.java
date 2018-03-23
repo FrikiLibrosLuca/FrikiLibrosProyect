@@ -178,7 +178,7 @@ public class ServiciosLibro implements IServiciosLibro {
 		lib.setIdioma(request.getParameter("idioma"));
 		lib.setSaga(request.getParameter("saga"));
 		lib.setFoto(request.getParameter("foto"));
-		lib.setIsbn(request.getParameter("ISBN"));
+		lib.setIsbn(request.getParameter("isbn"));
 		lib.setFechaEdicion(request.getParameter("fecha"));
 		id_autor = Integer.parseInt(request.getParameter("idAutor"));
 
