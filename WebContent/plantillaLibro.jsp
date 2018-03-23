@@ -34,8 +34,17 @@
                             </div>
                             <div class="col-lg-2">
                             	<c:if test="${privilegio}">
-					            	<jsp:include page="botonEliminar.jsp"/>
-					            	<jsp:include page="botonModificar.jsp"/>
+					            	<a href="<c:url value='Servlet?opcion=eliminarLibro&isbn=${libro.isbn}'/>">
+										<p align="right">
+										<button type="button" class="btn btn-danger" class="botonEliminar">Eliminar</button>
+										</p>
+									</a>
+					            	<!--<jsp:include page="botonModificar.jsp"/>-->
+					            	<a href="<c:url value='Servlet?opcion=insertarLibro&isbn=${libro.isbn}'/>">
+										<p align="right">
+											<button type="button" class="btn btn-primary" class="botonModificar">Modificar</button>
+										</p>
+									</a>
 					            </c:if>
                             </div>
                         </div>
