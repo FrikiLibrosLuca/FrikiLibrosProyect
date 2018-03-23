@@ -19,7 +19,6 @@
                     </section>
                 </c:forEach>
             </div>
-
         </div>
     </div>
 
