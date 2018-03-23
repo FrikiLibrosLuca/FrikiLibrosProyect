@@ -185,6 +185,7 @@ public class ServiciosLibro implements IServiciosLibro {
 
 		Libro lib = new Libro();
 		int resultado = 0;
+		Autor au = new Autor();
 		int id_autor;
 
 		// llenado del libro
@@ -194,7 +195,8 @@ public class ServiciosLibro implements IServiciosLibro {
 		lib.setFoto(request.getParameter("foto"));
 		lib.setIsbn(request.getParameter("isbn"));
 		lib.setFechaEdicion(request.getParameter("fecha"));
-		id_autor = Integer.parseInt(request.getParameter("idAutor"));
+		au.setIdAutor(Integer.parseInt(request.getParameter("idAutor")));
+		id_autor = au.getIdAutor();
 
 		if (request.getParameter("accion").equals("insert")) {
 			resultado = bbdd.insertLibro(lib, id_autor);

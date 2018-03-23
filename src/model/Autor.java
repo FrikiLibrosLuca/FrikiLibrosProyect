@@ -4,6 +4,8 @@ public class Autor {
 	
 	
 	String apellidoAutor, nombreAutor;
+	int idAutor;
+	
 	
 	//CONSTRUCTOR
 	public Autor(){
@@ -31,6 +33,16 @@ public class Autor {
 		this.nombreAutor = nombreAutor;
 	}
 	
+	
+	
+
+	public int getIdAutor() {
+		return idAutor;
+	}
+
+	public void setIdAutor(int idAutor) {
+		this.idAutor = idAutor;
+	}
 
 	@Override
 	public int hashCode() {
