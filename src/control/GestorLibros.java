@@ -52,6 +52,9 @@ public class GestorLibros {
 		case "eliminarLibro":
 			String isbn1 = rq.getParameter("isbn");
 			codError = serv.borrarLibro(isbn1);
+			rq.setAttribute("resultado", false);
+			rq.setAttribute("mensaje","Eliminado correctamente");
+			rq.setAttribute("plantilla", "popUp.jsp");
 			//rq=popUp(codError,rq);
 			break;
 		
