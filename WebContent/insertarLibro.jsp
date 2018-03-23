@@ -31,7 +31,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="modificarIdioma">Idioma</label>
-                                                        <input class="form-control" name="idioma" id="modificarIdioma" placeholder="InglÃ©s">
+                                                        <input class="form-control" name="idioma" id="modificarIdioma" placeholder="ES">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="modificarAutor">Autor</label>

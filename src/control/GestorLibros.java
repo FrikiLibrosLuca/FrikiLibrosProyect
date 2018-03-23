@@ -125,6 +125,8 @@ public class GestorLibros {
 			rq.setAttribute("mensaje", "Insertado o modificado o eliminar correctamente");
 			rq.setAttribute("plantilla", "popUp.jsp");
 			rq.setAttribute("resultado", false);
+		} else {
+			rq.setAttribute("mensaje", "No petes");
 		}
 		return rq;
 	}
