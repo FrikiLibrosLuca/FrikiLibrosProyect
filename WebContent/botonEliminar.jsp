@@ -1,6 +1,6 @@
 
-<a href="<c:url value='Servlet?opcion=eliminarLibro&isbn=${libro.isbn}'/>">
-	<p align="right">
+<a href="<c:url value='Servlet?opcion=eliminarLibro&isbn=12'/>" >
+	
 		<button type="button" class="btn btn-danger" class="botonEliminar">Eliminar</button>
-	</p>
+	
 </a>

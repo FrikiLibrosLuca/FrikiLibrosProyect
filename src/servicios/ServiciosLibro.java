@@ -231,6 +231,14 @@ public class ServiciosLibro implements IServiciosLibro {
 
 	}
 
+	/*
+	 * metodo que recibe un autor, lo gestiona y llama al conector para saber
+	 * si existe en la bbdd
+	 * 
+	 * @param String autor
+	 * 
+	 * @return Autor
+	 */
 	public List<Libro> buscarPorAutor(String autor) {
 
 		List<Libro> listadoLibros = new ArrayList<>();
@@ -257,5 +265,56 @@ public class ServiciosLibro implements IServiciosLibro {
 	 * 
 	 * }
 	 */
+	
+	/**
+	 * Metodo que devuelve la lista de todos los autor
+	 * 
+	 * @return List autor
+	 */
+	public List<Autor> leerListaAutor() {
+
+		List<Autor> listadoAutor = new ArrayList<>();
+		ResultSet rs = bbdd.leerListaAutor();
+
+		try {
+			while (rs.next()) {
+				listadoAutor.add(obtenerAutor(rs));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return listadoAutor;
+	}
+	
+	/**
+	 * método que recupera un autor dela bbdd y crea un objeto Autor
+	 * 
+	 * @param Resulset
+	 *            
+	 * @return Objeto tipo Autor
+	 * 
+	 */
+	public Autor obtenerAutor(ResultSet rs) {
+
+		Autor au = new Autor();
+		
+			try {
+				
+				au.setNombreAutor(rs.getString("nombre"));
+				au.setApellidoAutor(rs.getString("apellido"));
+				
+			} catch (SQLException sql) {
+				sql.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			logger.debug("------- empaquetando autor del resultset " + au.toString());
+		
+
+		return au;
+	}
 
 }

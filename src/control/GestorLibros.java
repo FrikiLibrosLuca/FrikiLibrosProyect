@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import model.Autor;
 import model.Libro;
 import servicios.ServiciosLibro;
 
@@ -31,6 +32,7 @@ public class GestorLibros {
 		
 		Libro lib;
 		List<Libro> listadoLibros;
+		List<Autor> listadoAutor;
 
 		int codError;
 		String valor;
@@ -81,9 +83,12 @@ public class GestorLibros {
 			rq.setAttribute("plantilla", "listaLibros.jsp");
 			
 			break;
-		}
-
 		
+		case "buscarAutor":
+			listadoAutor = serv.leerListaAutor();
+			rq.setAttribute("listadoAutor", listadoAutor);
+			rq.setAttribute("plantilla", "insertarLibro.jsp");
+		}
 
 		return rq;
 
