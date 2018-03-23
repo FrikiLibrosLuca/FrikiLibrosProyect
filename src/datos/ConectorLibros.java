@@ -2,35 +2,30 @@ package datos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
-
 import model.Libro;
-import servicios.ServiciosLibro;
 
 public class ConectorLibros {
 
-	static Connection con = null;
+	private Connection con = null;
 	private Statement st = null;
 	private ResultSet rs = null;
-	
+
 	private static Logger logger;
 
-    static {
-        try {
-            logger = LogManager.getLogger(ConectorLibros.class);
-        } catch (Throwable e) {
-            System.out.println("Don't work");
-        }
-    }
+	static {
+		try {
+			logger = LogManager.getLogger(ConectorLibros.class);
+		} catch (Throwable e) {
+			System.out.println("Don't work");
+		}
+	}
 
 	public ConectorLibros() {
 		abrirConnect();
@@ -52,7 +47,7 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} 
+		}
 	}
 
 	public void cerrarConnect() {
@@ -83,18 +78,112 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return rs;
+	}
+
+	public ResultSet leerElemento(String nameTable, String columna, String filtro) {
+		// String query = "SELECT * FROM " + nameTable + " WHERE " + columna +
+		// "=" + "filtro";
+
+		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
+				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + filtro
+				+ "' and a.id=l.id_autor;";
+
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return rs;
+
+	}
+
+	public ResultSet buscarLibro(String isbn) {
+		String query = "SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, i.ruta "
+				+ "from libros as l, autor as a, imagenes as i "
+				+ "where a.id=l.id_autor and l.isbn=i.isbn and l.isbn='"+isbn+"';";
+
+		//esta query funciona
+		/*String query = "SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, i.ruta from libros as l, autor as a, imagenes as i "
+				+ "where a.id=l.id_autor and l.isbn=i.isbn order by 1 limit 1;";*/
+		
+		logger.debug("----------------- " + query);
+
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+			
+		} catch (SQLException sqe) {
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+		return rs;
+	}
+
+	public ResultSet leerListaLibro() {
+		String query = "SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, i.ruta from libros as l, autor as a, imagenes as i where a.id=l.id_autor and l.isbn=i.isbn;";
+
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+		} catch (SQLException sqe) {
+			logger.error("Exception SQL:" + sqe.getMessage());
+			logger.error("Exception SQL:" + sqe.getSQLState());
+			logger.error("Exception SQL:" + sqe.getErrorCode());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return rs;
+	}
+
+	public ResultSet leerListaLibro(String columna, int valor) {
+		String query ="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
+				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "='" + valor + "' and a.id=l.id_autor and l.isbn=i.isbn;"; 
+
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
+		}
+		return rs;
+	}
+
+	public ResultSet leerListaLibro(String columna, String valor) {
+		String query ="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
+				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "=" + valor + " and a.id=l.id_autor and l.isbn=i.isbn;"; 
+				
+		try {
+			this.st = con.createStatement();
+			this.rs = st.executeQuery(query);
+
+		} catch (SQLException e) {
+			System.out.println("Exception SQL: " + e.getMessage());
+			System.out.println("Estado SQL: " + e.getSQLState());
+			System.out.println("Codigo del Error: " + e.getErrorCode());
 		} 
 		return rs;
 	}
 
-	
-	
-	
-	
-	public int insertLibro(Libro lib, int idAutor) {
+	public int insertLibro(Libro lib, int id_autor) {
 		String query = "INSERT INTO libro VALUES ('" + lib.getIsbn() + "', '" + lib.getTitulo() + "', '" + lib.getSaga()
 				+ "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '"
-				+ lib.getCategoria() + "', '" + idAutor + "';";
+				+ lib.getCategoria() + "', '" + id_autor + "';";
 
 		int registrosAfectados = -1;
 		try {
@@ -104,14 +193,16 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} 
+		}
 		return registrosAfectados;
+
+		
 	}
 
-	public int modificarLibro(Libro lib, int idAutor) {
+	public int modificarLibro(Libro lib, int id_autor) {
 		String query = "UPDATE libros SET titulo='" + lib.getTitulo() + "', saga='" + lib.getSaga()
 				+ "', fecha_edicion= STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d), idioma='"
-				+ lib.getIdioma() + "', categoria='" + lib.getCategoria() + "', id_autor='" + idAutor + "' WHERE isbn='"
+				+ lib.getIdioma() + "', categoria='" + lib.getCategoria() + "', id_autor='" + id_autor + "' WHERE isbn='"
 				+ lib.getIsbn() + "';";
 		int registrosAfectados = -1;
 		try {
@@ -121,8 +212,9 @@ public class ConectorLibros {
 			System.out.println("Exception SQL: " + e.getMessage());
 			System.out.println("Estado SQL: " + e.getSQLState());
 			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} 
+		}
 		return registrosAfectados;
+		
 	}
 
 	public int borrarLibro(String isbn) {
@@ -139,126 +231,4 @@ public class ConectorLibros {
 		return registrosAfectados;
 	}
 
-	public ResultSet leerLibro(String isbn) {
-		
-		
-		String query = "SELECT * FROM libros WHERE isbn='" + isbn + "';";
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} 
-		return rs;
-	}
-
-	public ResultSet leerListaLibro(String columna, String valor) {
-		logger.trace("-- trace conector --> "+valor);
-		String query ="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
-				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "='" + valor + "' and a.id=l.id_autor and l.isbn=i.isbn;"; 
-
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-	}
-
-	public ResultSet leerListaLibro(String columna, int valor) {
-		String query ="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
-				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE l." + columna + "=" + valor + " and a.id=l.id_autor and l.isbn=i.isbn;"; 
-				
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		} 
-		return rs;
-	}
-
-	public ResultSet leerListaLibro() {
-		String query = "SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, "
-				+ "i.ruta FROM libros as l, autor as a, imagenes as i WHERE a.id=l.id_autor and l.isbn=i.isbn;";
-
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-	}
-	
-	
-	public ResultSet buscarLibro(String isbn){
-		
-		
-		String query="SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, i.ruta FROM libros as l, autor as a, imagenes as i where a.id=l.id_autor and "
-				+ "l.isbn=i.isbn and l.isbn='"+isbn+"';";
-		logger.debug("-------dentro de leerelemento "+query);
-		try {
-			this.st=con.createStatement();
-			this.rs=st.executeQuery(query);
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		
-		
-		return rs;
-	}
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
