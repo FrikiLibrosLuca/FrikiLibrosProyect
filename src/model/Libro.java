@@ -5,13 +5,15 @@ import java.time.format.DateTimeFormatter;
 
 public class Libro {
 	private String titulo;
-	private String ISBN;
+	private String isbn;
 	private LocalDate fechaEdicion;
 	private String idioma;
 	private String categoria;
 	private String saga = null;
 	private Autor autor;
 	private String foto;
+	private int stock;
+	
 	
 	
 	//////CONSTRUCTOR//////////
@@ -19,11 +21,28 @@ public class Libro {
 		super();
 	}
 	
+		
+	public Libro(String titulo, String isbn, LocalDate fechaEdicion, String idioma, String categoria, String saga,
+			Autor autor, String foto, int stock) {
+		super();
+		this.titulo = titulo;
+		this.isbn = isbn;
+		this.fechaEdicion = fechaEdicion;
+		this.idioma = idioma;
+		this.categoria = categoria;
+		this.saga = saga;
+		this.autor = autor;
+		this.foto = foto;
+		this.stock = stock;
+	}
+
+
+
 	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String categoria, String saga,
 			Autor autor, String foto) {
 		super();
 		this.titulo = titulo;
-		this.ISBN = ISBN;
+		this.isbn = ISBN;
 		this.fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.categoria = categoria;
@@ -34,56 +53,61 @@ public class Libro {
 
 	//sin saga
 	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String categoria, Autor autor,
-			String foto) {
+			String foto,int stock) {
 		super();
 		this.titulo = titulo;
-		this.ISBN = ISBN;
+		this.isbn = ISBN;
 		this.fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.categoria = categoria;
 		this.autor = autor;
 		this.foto = foto;
+		this.stock = stock;
 	}
 
 	
 	//sin autor y sin categoria
-	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String foto) {
+	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String foto, int stock) {
 		super();
 		this.titulo = titulo;
-		this.ISBN = ISBN;
+		this.isbn = ISBN;
 		this.fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.foto = foto;
+		this.stock = stock;
 	}
 
 	//sin autor 
-	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String categoria, String foto) {
+	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, String categoria, String foto, int stock) {
 		super();
 		this.titulo = titulo;
-		this.ISBN = ISBN;
+		this.isbn = ISBN;
 		this.fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.categoria = categoria;
 		this.foto = foto;
+		this.stock = stock;
 	}
 	
 	//sin categoria 
-	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, Autor autor, String foto) {
+	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, Autor autor, String foto, int stock) {
 		super();
 		this.titulo = titulo;
-		this.ISBN = ISBN;
+		this.isbn = ISBN;
 		this.fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
 		this.autor = autor;
 		this.foto = foto;
+		this.stock = stock;
 	}
 	
-	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma) {
+	public Libro(String titulo, String ISBN, LocalDate fechaEdicion, String idioma, int stock) {
 		super();
 		this.titulo = titulo;
-		this.ISBN = ISBN;
+		this.isbn = ISBN;
 		this.fechaEdicion = fechaEdicion;
 		this.idioma = idioma;
+		this.stock = stock;
 	}
 	
 	
@@ -96,13 +120,17 @@ public class Libro {
 		this.titulo = titulo;
 	}
 
-	public String getISBN() {
-		return ISBN;
+	
+
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setISBN(String ISBN) {
-		this.ISBN = ISBN;
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
+
 
 	public LocalDate getFechaEdicion() {
 		return fechaEdicion;
@@ -156,11 +184,19 @@ public class Libro {
 	public void setSaga(String saga) {
 		this.saga = saga;
 	}
+	
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 
 	/////generar toString////////
 	@Override
 	public String toString() {
-		return "Libro [titulo=" + titulo + ", ISBN=" + ISBN + ", FechaEdicion=" + fechaEdicion + ", idioma=" + idioma
+		return "Libro [titulo=" + titulo + ", ISBN=" + isbn + ", FechaEdicion=" + fechaEdicion + ", idioma=" + idioma
 				+ ", categoria=" + categoria + ", autor=" + autor + ", foto=" + foto + "]";
 	}
 
@@ -172,7 +208,7 @@ public class Libro {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ISBN == null) ? 0 : ISBN.hashCode());
+		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
 		result = prime * result + ((autor == null) ? 0 : autor.hashCode());
 		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
 		result = prime * result + ((fechaEdicion == null) ? 0 : fechaEdicion.hashCode());
@@ -192,10 +228,10 @@ public class Libro {
 		if (getClass() != obj.getClass())
 			return false;
 		Libro other = (Libro) obj;
-		if (ISBN == null) {
-			if (other.ISBN != null)
+		if (isbn == null) {
+			if (other.isbn != null)
 				return false;
-		} else if (!ISBN.equals(other.ISBN))
+		} else if (!isbn.equals(other.isbn))
 			return false;
 		if (autor == null) {
 			if (other.autor != null)

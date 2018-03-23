@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -17,52 +18,48 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/Servlet"})
 public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private GestorLibros gestor = new GestorLibros();
 
 	
 	protected void processRequestHandler(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher view;
-        String origen = request.getParameter("opcion");
-        //Esto  es la opcion de la pagina de "pruebaboton" , 
-        /*entre los if orige.contentEquals("ValordelaOpcionHiddendlhtml"){metodoProcess}*/
-        if (origen.contentEquals("boton")) {
-        	processLibro(request,response);
-        } 
+		RequestDispatcher view;
+		
+		
+		
+		if(request.getParameter("opcion").equals("loggin")){
+			if(request.getParameter("nombreUsuario").equals("admin") && request.getParameter("contrasena").equals("1234")){
+				HttpSession session = request.getSession();
+				session.setAttribute("usuarioProyecto", "Admin");
+				session.setAttribute("privilegio", true);
+				view = request.getRequestDispatcher("index.jsp");
+				view.forward(request, response);
+				
+			} else {
+				request.setAttribute("mensaje", "Credenciales incorrectas");
+				request.setAttribute("resultado", false);
+				view = request.getRequestDispatcher("popUp.jsp");
+				view.forward(request, response);
+				
+			}		
+		}else{
+			
+		
+			
+			request=gestor.gestion(request,response);
+			
+			String plantilla = (String) request.getAttribute("plantilla");
+			view =request.getRequestDispatcher(plantilla);
+			
+	        view.forward(request, response);
+		
+		
+		
+		}	
     }
             
-    
-	 protected void processBoton (HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {
-	    	//PASO 3
-	    	//Vas a PruebaBoton
-	    	RequestDispatcher view;
-	    	view = request.getRequestDispatcher("puebaBoton.jsp");
-	    	view.forward(request, response);
-	    }
 	 
-	 protected void processLibro(HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {
-	        RequestDispatcher view;
-	        //Vas a plantillaLibro
-	        
-	        view = GestorLibros.mostrarDetallesLibro(request).getRequestDispatcher("plantillaLibro.jsp");
-	       
-	        view.forward(request, response);
-	    }
-	
-	 /*Plantilla para crear un metodo
-      * 
-      * protected void processNombreDelProcesador(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        RequestDispatcher view;
-        
-        view= request.getRequestDispatcher("nombreDelaPagina");
-        
-        view.forward(request,response);
-        
-        }
-    }*/
+
 	
 	//metodos doGet y doPost
          
