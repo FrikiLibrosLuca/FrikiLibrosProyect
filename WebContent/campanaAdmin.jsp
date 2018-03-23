@@ -1,28 +1,29 @@
-
-
-            <!-- MENU SUPERIOR ------------------------------------------------------------------------------------------------------------- -->
-            <!-- <ul class="nav navbar-top-links navbar-right"> -->
-                <!-- Campanita editor de cosas -GESTOR  -->
+<!-- MENU SUPERIOR ------------------------------------------------------------------------------------------------------------- -->
+            
+                           
+ <!-- Campanita editor de cosas -GESTOR  -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#menuPanel">
+                    <a class="dropdown-toggle" data-toggle="collapse" data-target="#demo" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-
-                    <ul class="dropdown-menu dropdown-user">
-                        <!--Aqui deberia haber un escalon-->
+                 
+                   <ul class="dropdown-menu dropdown-user" id="demo" data-target="#menuPanel">
+                    
+                    <li>
+              <!--Aqui deberia haber un escalon-->
+                     <div class="sidebar-nav navbar-collapse"> 
+                        <ul class="nav" id="side-menu" id="menuPanel">  
+                          
+                    
+                       
+<!-------------------------------------------------------->
                         <li>
-                            <div class="sidebar-nav navbar-collapse">
-                                <ul class="nav" id="side-menu" id="menuPanel">
-
-
-
-                                    <!-------------------------------------------------------->
-                                    <li>
-                                    	<i class="fa fa-tasks fa-fw "></i> Editar Libros
-                                        <span class="fa arrow"></span> 
-                                    <li class="divider"></li>
-                                         <!--<ul class=" nav nav-second-level ">-->
-                                            
+                          <a href="#">
+                             <i class="fa fa-tasks fa-fw"></i> Editar Libros
+                                <span class="fa arrow"></span> </a>               
+                                <ul class="nav nav-second-level">
+                                    <div>
+                               		<li class="divider"></li>
                                     <li>
                                         <a href="insertarLibro.jsp">Insertar Libro</a>
                                     </li>
@@ -32,46 +33,43 @@
                                     <li>
                                         <a href="Servlet?opcion=listadoGeneral">Actualizar Libro</a>
                                     </li>
-                                                <!-- 
-                                                <li>
-                                                    <a href="Servler">Mostrar Libro</a>
-                                                </li>
-                                                -->
-                                        <!-- </ul> -->    
-                                        
-
-                                    </li>
-                                    <!-- 
-                                    <li class="divider"></li>
                                     <li>
-                                        <a href="#">
-                                            
-                                                <i class="fa fa-tasks fa-fw"></i> Editar Usuarios
-                                            
-                                        </a>
+                                        <a href="Servlet?opcion=stock">Mostrar stock</a>
                                     </li>
-                                    <li class="divider"></li>
-                                     -->
-                                    <!---ESTO NO SE QUE ES-->
-                                    <!-- 
-                                    <li>
-                                        <a href="#">
-                                           
-                                                <i class="fa fa-tasks fa-fw"></i> Editar Provedores
-                                            
-                                        </a>
-                                    </li>
-                                     -->
-                                    <!-------------------------------------------------------->
-
-                                </ul>
-                            </div>
+                                    </div>
+                                </ul>   
+                        </li>  
+              <!--                            
+                           </li>
+                                <li class="divider"></li>
+                        <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-tasks fa-fw"></i> Editar Usuarios
+                                        </div>
+                                    </a>
                         </li>
+                                <li class="divider"></li> 
+                        <li>
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-tasks fa-fw"></i> Editar Provedores
+                                        </div>
+                                    </a>
+                        </li> -->
+  
+                          
+                        </ul>
+                     </div> 
+<!--------cierro el escalon------------------->
+                     
+                        </li>
+                       
                     </ul>
                 </li>
-              <!--  </ul> -->
+               
            
-           
-           
+ 
+  
  
   
