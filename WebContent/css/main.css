@@ -3,6 +3,11 @@
     color: #428bca;
 }
 
+.textoMenu {
+	font-size: 20px;
+    color: #428bca;
+}
+
 .plantillasLibro {
     font-size: 20px;
     color: #56a0ce;
@@ -53,4 +58,12 @@ section.elementoLibro figure figcaption{
 	float: right;
 }
 	
+.logo {
+      
+  float: left;
+  height: 50px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 20px;
+    
 }

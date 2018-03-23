@@ -26,11 +26,12 @@ public class Servlet extends HttpServlet {
 		RequestDispatcher view;
 		
 		
+		
 		if(request.getParameter("opcion").equals("loggin")){
 			if(request.getParameter("nombreUsuario").equals("admin") && request.getParameter("contrasena").equals("1234")){
 				HttpSession session = request.getSession();
 				session.setAttribute("usuarioProyecto", "Admin");
-				request.setAttribute("privilegio", true);
+				session.setAttribute("privilegio", true);
 				view = request.getRequestDispatcher("index.jsp");
 				view.forward(request, response);
 				
@@ -42,14 +43,15 @@ public class Servlet extends HttpServlet {
 				
 			}		
 		}else{
-				
+			
 		
-		request=gestor.gestion(request,response);
-		
-		String plantilla = (String) request.getAttribute("plantilla");
-		view =request.getRequestDispatcher(plantilla);
-		
-        view.forward(request, response);
+			
+			request=gestor.gestion(request,response);
+			
+			String plantilla = (String) request.getAttribute("plantilla");
+			view =request.getRequestDispatcher(plantilla);
+			
+	        view.forward(request, response);
 		
 		
 		

@@ -1,7 +1,7 @@
 
 
             <!-- MENU SUPERIOR ------------------------------------------------------------------------------------------------------------- -->
-            <ul class="nav navbar-top-links navbar-right">
+            <!-- <ul class="nav navbar-top-links navbar-right"> -->
                 <!-- Campanita editor de cosas -GESTOR  -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#menuPanel">
@@ -18,28 +18,30 @@
 
                                     <!-------------------------------------------------------->
                                     <li>
-                                        <a href="#">
-                                             <i class="fa fa-tasks fa-fw"></i> Editar Libros
-                                            <span class="fa arrow"></span> 
-                                       </a>
-                                        <ul class="nav nav-second-level">
+                                    	<i class="fa fa-tasks fa-fw "></i> Editar Libros
+                                        <span class="fa arrow"></span> 
+                                    <li class="divider"></li>
+                                         <!--<ul class=" nav nav-second-level ">-->
                                             
-                                                <li>
-                                                    <a href="Servler">Insertar Libro</a>
-                                                </li>
-                                                <li>
-                                                    <a href="Servler">Eliminar Libro</a>
-                                                </li>
-                                                <li>
-                                                    <a href="Servler">Actualizar Libro</a>
-                                                </li>
+                                    <li>
+                                        <a href="insertarLibro.jsp">Insertar Libro</a>
+                                    </li>
+                                    <li>
+                                        <a href="Servlet?opcion=listadoGeneral">Eliminar Libro</a>
+                                    </li>
+                                    <li>
+                                        <a href="Servlet?opcion=listadoGeneral">Actualizar Libro</a>
+                                    </li>
+                                                <!-- 
                                                 <li>
                                                     <a href="Servler">Mostrar Libro</a>
                                                 </li>
-                                            
-                                        </ul>
+                                                -->
+                                        <!-- </ul> -->    
+                                        
 
                                     </li>
+                                    <!-- 
                                     <li class="divider"></li>
                                     <li>
                                         <a href="#">
@@ -49,7 +51,9 @@
                                         </a>
                                     </li>
                                     <li class="divider"></li>
+                                     -->
                                     <!---ESTO NO SE QUE ES-->
+                                    <!-- 
                                     <li>
                                         <a href="#">
                                            
@@ -57,6 +61,7 @@
                                             
                                         </a>
                                     </li>
+                                     -->
                                     <!-------------------------------------------------------->
 
                                 </ul>
@@ -64,7 +69,7 @@
                         </li>
                     </ul>
                 </li>
-              </ul>
+              <!--  </ul> -->
            
            
            

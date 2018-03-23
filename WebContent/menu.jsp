@@ -54,10 +54,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <img class="logo" src="imagenes/logoFriki.png" width="250" height="50" align="middle">
             </div>
 
             <!-- MENU SUPERIOR--------------------------------------------------------------------------------------------------------------------- -->
             <ul class="nav navbar-top-links navbar-right">
+            <c:if test="${privilegio}">
+            	<jsp:include page="campanaAdmin.jsp"/>
+            </c:if>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
