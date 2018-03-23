@@ -40,8 +40,8 @@ public class GestorLibros {
 		switch (opcion) {
 		case "buscarLibro":
 			String isbn = rq.getParameter("isbn");
-			lib = serv.buscarLibro(isbn);
-			rq.setAttribute("libro", lib);
+			listadoLibros = serv.buscarLibro(isbn);
+			rq.setAttribute("libro", listadoLibros.get(0));
 			rq.setAttribute("plantilla", "plantillaLibro.jsp");
 			
 			break;

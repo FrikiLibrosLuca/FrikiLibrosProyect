@@ -8,7 +8,7 @@ import model.Libro;
 
 public interface IServiciosLibro {
 
-	Libro buscarLibro(String isbn);
+	List<Libro> buscarLibro(String isbn);
 	
 	List<Libro> leerListaLibro();
 	

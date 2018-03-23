@@ -68,40 +68,6 @@ public class ConectorLibros {
 		}
 	}
 
-	public ResultSet leerElemento(String nameTable) {
-		String query = "SELECT * FROM " + nameTable;
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-	}
-
-	public ResultSet leerElemento(String nameTable, String columna, String filtro) {
-		// String query = "SELECT * FROM " + nameTable + " WHERE " + columna +
-		// "=" + "filtro";
-
-		String query = "SELECT isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, "
-				+ "a.apellido FROM libros as l, autor as a WHERE l." + columna + "='" + filtro
-				+ "' and a.id=l.id_autor;";
-
-		try {
-			this.st = con.createStatement();
-			this.rs = st.executeQuery(query);
-
-		} catch (SQLException e) {
-			System.out.println("Exception SQL: " + e.getMessage());
-			System.out.println("Estado SQL: " + e.getSQLState());
-			System.out.println("Codigo del Error: " + e.getErrorCode());
-		}
-		return rs;
-
-	}
 
 	public ResultSet buscarLibro(String isbn) {
 		String query = "SELECT l.isbn, titulo, saga, fecha_edicion, idioma, categoria, a.nombre, a.apellido, i.ruta "
@@ -203,14 +169,14 @@ public class ConectorLibros {
 		String query = "INSERT INTO libro VALUES ('" + lib.getIsbn() + "', '" + lib.getTitulo() + "', '" + lib.getSaga()
 		+ "', STR_TO_DATE('" + lib.getFechaEdicion() + "', '%Y-%m-%d'), '" + lib.getIdioma() + "', '"
 		+ lib.getCategoria() + "', '" + id_autor + "';";
-		
+		int[] res={0,0};
 		try{
 			con.setAutoCommit(false);
 	         st = con.createStatement();
 	         st.addBatch(query);
 	         st.addBatch("insert into imagenes values('"+lib.getIsbn()+"','imagenes/200.jpg');");
 	         
-	        st.executeBatch();
+	        res=st.executeBatch();
 	         
 	         
 	         con.commit();
@@ -222,7 +188,7 @@ public class ConectorLibros {
 		
 		
          
-         return 0;
+         return res[0];
 	}
 	
 	

@@ -76,13 +76,27 @@ public class ServiciosLibro implements IServiciosLibro {
 	 * @return Objeto tipo Libro
 	 * 
 	 */
-	public Libro buscarLibro(String isbn) {
-		logger.debug("---------isbn de entrada a buscar libro " + isbn);
+	public List<Libro> buscarLibro(String isbn) {
+		/*logger.debug("---------isbn de entrada a buscar libro " + isbn);
 		ResultSet rs = bbdd.buscarLibro(isbn);
 
 		Libro lib = obtenerLibro(rs);
 		logger.debug("----servicio buscar libro " + lib.toString());
-		return lib;
+		return lib;*/
+		
+		List<Libro> listadoLibros = new ArrayList<>();
+		ResultSet rs = bbdd.leerListaLibro("isbn", isbn);
+
+		try {
+			while (rs.next()) {
+				listadoLibros.add(obtenerLibro(rs));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return listadoLibros;
 	}
 
 	/**
