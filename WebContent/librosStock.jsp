@@ -1,5 +1,4 @@
-<%@ include file ="menuAdmin.jsp" %>
-
+<%@ include file ="menu.jsp" %>
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
