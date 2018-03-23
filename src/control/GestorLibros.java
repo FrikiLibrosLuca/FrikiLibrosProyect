@@ -47,6 +47,9 @@ public class GestorLibros {
 			break;
 		case "insertarLibro":
 			codError = serv.insertarModificar(rq);
+			rq.setAttribute("resultado", false);
+			rq.setAttribute("mensaje","Insertado correctamente");
+			rq.setAttribute("plantilla", "popUp.jsp");
 			//rq=popUp(codError,rq);
 			break;
 		case "eliminarLibro":
