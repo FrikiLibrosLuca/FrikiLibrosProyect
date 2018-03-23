@@ -21,7 +21,7 @@
                                     <div class="col-lg-6 datosInfoLibro">
                                         <p class="plantillasLibro">Título: <span>${libro.titulo}</span></p>
                                         <p class="plantillasLibro">ISBN: <span>${libro.isbn}</span></p>
-                                        <p class="plantillasLibro">Autor: <span>${libro.autor.nombreAutor}</span></p>
+                                        <p class="plantillasLibro">Autor: <span>${libro.autor.apellidoAutor}</span>,  <span>${libro.autor.nombreAutor}</span></p>
                                         <p class="plantillasLibro">Saga: <span>${libro.saga}</span></p>
                                         <p class="plantillasLibro">Fecha de publicación: <span>${libro.fechaEdicion}</span></p>
                                         <p class="plantillasLibro">Categoría: <span>${libro.categoria}</span></p>
