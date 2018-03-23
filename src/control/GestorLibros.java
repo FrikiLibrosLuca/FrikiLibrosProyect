@@ -90,8 +90,14 @@ public class GestorLibros {
 			listadoAutor = serv.leerListaAutor();
 			rq.setAttribute("listadoAutor", listadoAutor);
 			rq.setAttribute("plantilla", "insertarLibro.jsp");
-		}
+		break;
 		
+		case "stock":
+			listadoLibros = serv.leerListaLibro();
+			rq.setAttribute("listadoLibros", listadoLibros);
+			rq.setAttribute("plantilla", "librosStock.jsp");
+			break;
+		}
 
 		return rq;
 
