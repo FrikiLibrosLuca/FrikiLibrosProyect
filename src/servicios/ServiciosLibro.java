@@ -45,7 +45,7 @@ public class ServiciosLibro implements IServiciosLibro {
 		Autor au = new Autor();
 		
 			try {
-				if (rs.next()) {
+				
 				lib.setIsbn(rs.getString("isbn"));
 				lib.setTitulo(rs.getString("titulo"));
 				lib.setSaga(rs.getString("saga"));
@@ -55,7 +55,7 @@ public class ServiciosLibro implements IServiciosLibro {
 				lib.setFoto(rs.getString("ruta"));
 				au.setNombreAutor(rs.getString("nombre"));
 				au.setApellidoAutor(rs.getString("apellido"));
-				}
+				
 			} catch (SQLException sql) {
 				sql.printStackTrace();
 			} catch (Exception e) {
