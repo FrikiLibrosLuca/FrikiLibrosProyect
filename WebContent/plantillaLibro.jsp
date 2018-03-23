@@ -35,6 +35,7 @@
                             <div class="col-lg-2">
                             	<c:if test="${privilegio}">
 					            	<jsp:include page="botonEliminar.jsp"/>
+					            	<jsp:include page="botonModificar.jsp"/>
 					            </c:if>
                             </div>
                         </div>
